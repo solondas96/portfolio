@@ -1,0 +1,320 @@
+{
+  "basics": {
+    "name": "Solon Das",
+    "title": "Senior AI Data Engineer | GenAI, RAG & Distributed Data Platforms",
+    "summary": "Senior Data Engineering leader with 7+ years of experience architecting distributed, AI-ready data platforms at enterprise scale. Proven track record of building GenAI systems, real-time streaming pipelines, semantic search architectures, and data quality frameworks that power multi-million dollar business impact. Deep expertise in Spark, Databricks, Palantir Foundry, Azure, Kafka, and large-scale data modeling.",
+    "location": "Bengaluru, India",
+    "email": "solondas96@gmail.com",
+    "phone": "7008482584",
+    "links": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/solondas" },
+      { "name": "The Datum Theory", "url": "https://medium.com/@solondas96" },
+      { "name": "Github", "url": "https://github.com/solondas96" }
+    ]
+  },
+
+  "experience": [
+
+    {
+      "company": "Swiss Re",
+      "role": "AVP - Data Engineering (Palantir Foundry)",
+      "dates": "Mar 2025 - Present",
+      "location": "Bengaluru",
+      "bullets": [
+        "Architected the Unstructured Data Platform for Swiss Re Asset Management, enabling AI-native interaction with enterprise document corpora.",
+        "Designed multimodal ingestion pipelines extracting structured objects (images, charts, tables, text) from high-volume Outlook and UI uploads.",
+        "Built embedding-based semantic retrieval system supporting enterprise-scale deep search across financial documentation.",
+        "Implemented Vision-Language Model powered summarization to operationalize AI insights for business users.",
+        "Defined ontology-driven data modeling strategy within Palantir Foundry to standardize AI interaction across domains.",
+        "Established foundational AI data layer serving downstream GenAI products and executive decision workflows."
+      ]
+    },
+
+    {
+      "company": "AB InBev",
+      "role": "Senior Data Engineer - Generative AI Platforms",
+      "dates": "Sep 2022 - Mar 2025",
+      "location": "Bengaluru",
+      "bullets": [
+        "Led data architecture for Insights Copilot, an enterprise-scale GenAI platform supporting global cross-functional decision-making.",
+        "Designed scalable Spark-based pipelines on Azure Databricks processing multi-domain FMCG datasets.",
+        "Built enterprise Data Quality Framework enforcing schema validation, anomaly detection, and harmonization across business units.",
+        "Owned NL2SQL data strategy enabling natural language querying across Finance, HR, Marketing, Logistics, Procurement, and Strategy domains.",
+        "Developed reusable domain-aware data models to optimize LLM context utilization across 5+ global business verticals.",
+        "Engineered DTC-MROI data platform across Brazil, Mexico, Colombia, Argentina delivering 5% incremental sales uplift and $1.7M revenue gain."
+      ]
+    },
+
+    {
+      "company": "EY",
+      "role": "Senior Consultant - Big Data Engineering",
+      "dates": "May 2021 - Sep 2022",
+      "location": "Bengaluru",
+      "bullets": [
+        "Designed event-driven distributed ingestion pipelines using Spark, Kafka, Azure Cosmos DB, and Azure Event Hub.",
+        "Implemented real-time streaming frameworks with fault tolerance and replay capabilities for high-throughput systems.",
+        "Built observability and data lineage tracking systems for pipeline monitoring and SLA enforcement.",
+        "Optimized ingestion latency and improved pipeline reliability across enterprise data workloads."
+      ]
+    },
+
+    {
+      "company": "Accenture",
+      "role": "Data Engineer",
+      "dates": "Jul 2018 - Nov 2020",
+      "location": "Pune",
+      "bullets": [
+        "Developed PySpark-based transformation frameworks for large-scale pharmaceutical datasets.",
+        "Built automation utilities reducing job scheduling effort by 98% using Python-based JIL generator.",
+        "Engineered deployment management tooling improving environment release efficiency."
+      ]
+    }
+  ],
+
+  "leadership": [
+    {
+      "area": "Platform Ownership",
+      "details": "Owned end-to-end data architecture for enterprise GenAI platforms spanning 5+ global business domains."
+    },
+    {
+      "area": "AI Strategy",
+      "details": "Defined semantic embedding and ontology modeling strategy for AI-first data interaction layers."
+    },
+    {
+      "area": "Business Impact",
+      "details": "Delivered measurable revenue impact ($1.7M gain, 5% sales uplift) through scalable data platforms."
+    }
+  ],
+
+  "achievements": [
+    {
+      "title": "Revenue Impact",
+      "metric": "$1.7M",
+      "context": "Net revenue gain through marketing optimization data platform."
+    },
+    {
+      "title": "Sales Growth",
+      "metric": "5%",
+      "context": "Incremental uplift across LATAM markets."
+    },
+    {
+      "title": "Operational Efficiency",
+      "metric": "98%",
+      "context": "Reduction in manual scheduling effort via automation tooling."
+    },
+    {
+      "title": "Processing Optimization",
+      "metric": "90%",
+      "context": "Reduction in loan approval time using ML-powered scoring models."
+    }
+  ],
+
+  "skills": [
+    {
+      "group": "Distributed Data Systems",
+      "items": [
+        "Apache Spark",
+        "PySpark",
+        "Databricks",
+        "Kafka",
+        "Event-Driven Architectures",
+        "Streaming Systems"
+      ]
+    },
+    {
+      "group": "Cloud & Infrastructure",
+      "items": [
+        "Microsoft Azure",
+        "Azure Databricks",
+        "Azure Cosmos DB",
+        "Azure Event Hub"
+      ]
+    },
+    {
+      "group": "AI & Data Platforms",
+      "items": [
+        "Palantir Foundry",
+        "LLMs",
+        "Vision-Language Models",
+        "NL2SQL",
+        "Semantic Search",
+        "Vector Embeddings",
+        "Ontology Modeling"
+      ]
+    },
+    {
+      "group": "Data Governance & Modeling",
+      "items": [
+        "Data Quality Frameworks",
+        "Metadata Engineering",
+        "Schema Design",
+        "Data Warehousing"
+      ]
+    },
+    {
+      "group": "Programming",
+      "items": [
+        "Python",
+        "SQL"
+      ]
+    }
+  ],
+
+  "Projects & Research": [
+  {
+    "title": "Data Engineering Portfolio - ABInBev",
+    "category": "Insights Copilot Portfolio",
+    "url": "https://drive.google.com/file/d/1ttASHvPyETA1XvI4lqh3UV_VAWq_Tqor/view?usp=sharing",
+    "type": "portfolio"
+  },
+  {
+    "title": "ABI Insights Copilot Launch Video",
+    "category": "Product launch Video",
+    "url": "https://drive.google.com/file/d/1jTKfCRb-4R07m4BTK3qxOCVJyZuZj_kA/view?usp=sharing",
+    "type": "video"
+  },
+  {
+    "title": "Research Thesis Presentation",
+    "category": "Research Work Presentation",
+    "url": "https://drive.google.com/file/d/1MaKagYS_9nqWN8ghYAWMPVD9LhInJpcT/view?usp=share_link",
+    "type": "presentation"
+  },
+  {
+    "title": "Predicting Fraudulent Jobs Research Thesis",
+    "category": "Natural Language Processing",
+    "url": "https://drive.google.com/file/d/1L_AUwU-8rhUBQazGOdKtWB0eRaaRE8SS/view?usp=share_link",
+    "type": "research"
+  }
+],
+
+  "education": [
+    {
+      "institution": "Liverpool John Moores University",
+      "degree": "M.Sc, Data Science",
+      "dates": "2020 - 2021"
+    },
+    {
+      "institution": "International Institute of Information Technology Bangalore",
+      "degree": "PG Diploma, Data Science",
+      "dates": "2019 - 2020"
+    },
+    {
+      "institution": "Veer Surendra Sai University of Technology",
+      "degree": "B.Tech, Information Technology",
+      "dates": "2014 - 2018"
+    },
+    {
+      "institution": "Mother's Public School",
+      "degree": "12th - CBSE",
+      "dates": "2012 - 2014"
+    },
+    {
+      "institution": "St. Joseph's High School",
+      "degree": "10th - ICSE",
+      "dates": "2000 - 2012"
+    }
+  ],
+
+  "certifications": [
+    "Foundry Data Engineer Associate",
+    "HackerRank SQL Advanced",
+    "HackerRank SQL Intermediate",
+    "HackerRank Python Basics"
+  ],
+
+  "testimonials": [
+
+    {
+      "name": "Aritra Biswas",
+      "title": "Senior Engineering Manager | AI/ML & GenAI Platforms | Agentic Systems | GenAI · Distributed ML · Production Systems",
+      "date": "March 3, 2025",
+      "text": "Solon is an exceptional data engineer who combines technical brilliance with a strong sense of ownership. His expertise in Python, PySpark, Azure, Databricks, and SQL has been instrumental in building scalable pipelines and ensuring data quality. Beyond his technical acumen, he is a proactive problem-solver, a great mentor, and a collaborative team player. His ability to drive innovation while maintaining clarity and efficiency makes him an invaluable asset to any organization. I highly recommend him for any data engineering leadership role."
+    },
+
+    {
+      "name": "Kartik Sangani",
+      "title": "Building GenAI Products @ ABInBev || IIT Madras",
+      "date": "February 7, 2025",
+      "text": "Solon is one of the most proactive individuals I’ve ever worked with, he doesn’t just meet expectations - he exceeds them. He thrives on tackling complex challenges, finding innovative solutions, and elevating his entire team in the process.\n\nAlong with his data engineering technical prowess, he also demonstrates his ability to coach & mentor new joinees and helped them hone their data engineering skills.\n\nHe constantly pushes the boundaries of what’s possible, bringing an insatiable hunger for learning and a fearless approach to problem-solving. He is a great asset in any team and would definitely recommend him for all data engineering related leadership positions. Outside of work, he is a great guy to hang out with and discuss ideas."
+    },
+
+    {
+      "name": "Soutrik Chowdhury",
+      "title": "Principal ML Engineer @ Eli Lilly and Company",
+      "date": "January 25, 2025",
+      "text": "I’ve had the privilege of working alongside Solon Das and witnessing his outstanding contributions to data engineering and AI-driven solutions at AB InBev. His leadership in building scalable data pipelines and spearheading the development of Insights Copilot, a Generative AI-powered platform, has been pivotal in enabling our organization to derive actionable insights and drive informed decision-making across multiple business functions.\n\nSolon’s deep expertise in data quality frameworks, AI model development, and Azure DataBricks pipelines has had a profound impact on our operations, ensuring seamless data integration across global teams. He has been instrumental in leading the end-to-end data migration and transformation processes, ensuring that our AI systems are powered by clean, structured, and reliable data. His strategic approach and attention to detail have greatly contributed to the success of our AI initiatives.\n\nBeyond his technical excellence, Solon brings a problem-solving mindset and a strong business acumen that makes him an invaluable asset to any organization. I highly recommend him for his dedication, strategic vision, and unwavering commitment to driving data excellence and innovation."
+    },
+
+    {
+      "name": "Shreeganesh Adiga",
+      "title": "Principal Architect At AB InBev",
+      "date": "January 20, 2025",
+      "text": "I had the pleasure of working closely with Solon, and I can confidently say he is an exceptional team player. He consistently demonstrates a strong commitment to collaboration, fostering an environment where ideas and solutions thrive.\n\nSolon has remarkable technical expertise in Azure Data Factory (ADF), Azure Databricks (ADB), PySpark, and relational databases, making him an invaluable asset to any data engineering or analytics project. His ability to design efficient data pipelines and optimize workflows is truly impressive.\n\nWhat sets Solon apart is his problem-solving mindset and eagerness to take on complex challenges. He combines his technical acumen with clear communication skills, ensuring that projects are delivered seamlessly and on time.\n\nBeyond his technical skills, Solon's positive attitude, adaptability, and dedication to excellence make him a standout colleague. I highly recommend Solon for any role where teamwork, innovation, and technical expertise are valued."
+    },
+
+    {
+      "name": "Sourav Debnath",
+      "title": "AI Product Manager | Solving Business Problems with Scalable AI Products",
+      "date": "January 18, 2025",
+      "text": "I have been working with Solon since I joined Abinbev last May and it has been a fantastic experience filled with a lot of learning for me. He helped me onboard onto the vast database of information that we had been utilizing for our GenAI products and understand the complexity and importance of clean data pipelines for GenAI to function. In this short span of time, I've seen the depth and variety of problems he was able to solve starting from setting up a Data Quality Framework which currently serves as a pivotal check gate for any new case that we take up, along with setting up data pipelines in minutes for quick POCs. He is always clear on what needs to be achieved and sticks to timelines. He has been one of the most valuable members in our team and with a very humble and approachable personality who can fit in any environment without any issue."
+    },
+
+    {
+      "name": "Pragyan Prakash",
+      "title": "Senior Machine Learning Engineer at ABInBev | Ex- Data Science Consultant at Accenture Strategy and Consulting | Ex-Nielsen | Ex-Infosys",
+      "date": "January 16, 2025",
+      "text": "It has been an absolute pleasure working alongside Solon—a data engineer who exemplifies professionalism, ownership, and technical brilliance. Solon consistently goes above and beyond to ensure the success of every project, demonstrating a rare combination of technical expertise and a proactive attitude that makes a tangible difference.\n\nWith exceptional skills in Python, PySpark, Azure, Databricks, and SQL, he has been instrumental in delivering complex data pipelines and optimizing workflows with precision. His ability to write clean, efficient code and navigate intricate cloud ecosystems is nothing short of remarkable.\n\nWhat truly sets him apart is his sense of ownership. He takes full accountability for his work, often identifying potential roadblocks ahead of time and proactively addressing them. Whether it's troubleshooting a tough issue or finding innovative solutions under tight deadlines, Solon always delivers with unwavering commitment.\n\nIn addition to his core engineering skills, he also possesses a solid understanding of data science, which enables us to bridge the gap between engineering and analytics seamlessly. This broader perspective adds tremendous value to our contributions.\n\nI wholeheartedly recommend him to any organization looking for a highly skilled, reliable, and driven data engineer. He is not just a valuable team member but an inspiring one as well, consistently setting the bar higher for everyone around them."
+    },
+
+    {
+      "name": "Mayara Correa Bonamichi",
+      "title": "Gen AI Product Owner at AB InBev | Ambev Global Tech | Ambassador @Mulheres de Produto | Building Cutting-Edge AI Products",
+      "date": "January 10, 2025",
+      "text": "I have had the pleasure of working closely with Solon at Ab-InBev, and I can confidently say that he is an exceptional data engineer and a great team player. His technical expertise have been an asset to our team, and he stands out in is his ability to collaborate. He is always approachable and has great communication skills. Whether working with technical or non-technical team members, he ensures that everyone is on the same page. This has been incredibly valuable in aligning our teams and driving projects forward.\n\nIn addition to his technical skills, Solon brings a positive attitude and a strong sense of ownership to projects. He is proactive in identifying challenges and finding solutions.\n\nI highly recommend Solon for any role that requires a combination of technical expertise, collaboration, and effective communication. He would be an asset to any team."
+    },
+
+    {
+      "name": "Arpitesh Srivastava",
+      "title": "Product @ bounteous | Building Revenue Orchestration Platform | Strategy & Execution | GrowthX Member | Book slot via Topmate",
+      "date": "September 12, 2024",
+      "text": "I had the pleasure of working with Solon at AB InBev, where he was an exceptional Senior Data Engineer. He took full ownership of the data side for our Generative AI product and built efficient data pipelines from the ground up. Solon’s expertise in data strategy and modeling played a crucial role in the success of the platform, enabling users to access insights across various business areas. His ability to solve complex data challenges independently was impressive, and he consistently delivered high-quality results. I highly recommend Solon for any data engineering role."
+    },
+
+    {
+      "name": "Shashank Chakrawarty",
+      "title": "Data Engineering Architect | ETL Specialist | Apache Airflow, Databricks | Spark, Trino, SQL | Redshift, BigQuery, Synapse | Delta Tables, Delta Lake | Azure, AWS, GCP | Docker | ADF Specialist",
+      "date": "June 3, 2024",
+      "text": "Solon has been an exceptional mentor in data engineering. His deep knowledge and ability to simplify complex concepts have significantly boosted my technical skills and confidence. Solon’s dedication and personalized guidance, from detailed code reviews to insightful career advice, have been invaluable. He not only enhances technical prowess but also emphasizes the importance of soft skills and professional development. I highly recommend Solon for his expertise, dedication, and supportive nature."
+    },
+
+    {
+      "name": "Saurav Roy",
+      "title": "AWS Data Engineer @ Deloitte | Python | Apache Spark | Big Data | SQL | AWS | Pyspark | Certified AWS Developer - Associate",
+      "date": "April 26, 2024",
+      "text": "In my recent discussions with Solon, I gained a comprehensive understanding of interview strategies, effective preparation methods, and the types of questions to anticipate. His in-depth knowledge gained from working with several organizations and his expertise in the field of data engineering have provided me with valuable insights and learning opportunities. Solon's expertise in navigating the complexities of the subject matter provided invaluable guidance on the key competencies essential for success in Data Engineering field.\n\nHis dedication to providing guidance on becoming a successful Data Engineer underscores his commitment to supporting and mentoring students in this specialized field."
+    },
+
+    {
+      "name": "Abhinandan Shaw",
+      "title": "MBA | R&D Engineer, Product Lead, Java | Spring Boot | Event Driven Microservices | GraphQL | REST | Kafka | Azure | AWS | Camunda | MongoDB | Neo4J | Docker | Kubernetes | SQL Server | Oracle | ELK | Performance Tuning",
+      "date": "August 25, 2022",
+      "text": "I have worked with Solon for about 1.5+ yrs. He has been phenomenal in his development as a Data Engineer. He always has keen eyes on the design, development and testing software modules and is always eager to learn something new. He can quickly adapt to changes and has helping nature towards his team members. Moreover, he has leading capabilities as well as he exhibited it quite well in his previous engagement and has the potential to bring a best version of himself."
+    },
+
+    {
+      "name": "Dr. Indranil Mitra, D.Sc, PhD, MBA, IPR, F- RSS (UK), FRSA (UK)",
+      "title": "Partner @ PwC | AI, Gen AI, Advanced Analytics",
+      "date": "October 8, 2020",
+      "text": "Solon possesses a wide range of knowledge on Data Science which includes predictive modelling and deriving useful insights for different business use cases. He will be a very good asset to any organization. He has the ability to prioritize his work and deliver without fail and produces very good results. I wish him all the best for his future."
+    },
+
+    {
+      "name": "Arnav Malviya",
+      "title": "Lead Data Architect",
+      "date": "September 5, 2020",
+      "text": "Solon is a combination of hardwork and intelligence. When he works, he owns the tasks and one can completely rely on him. His specialization on algorithms helped us solve some very tricky problems."
+    }
+
+  ]
+
+}
