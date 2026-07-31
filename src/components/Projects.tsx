@@ -26,54 +26,49 @@ export default function Projects({ data }: { data: any[] }) {
           className="flex flex-col gap-4"
         >
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-indigo-400/20 bg-indigo-400/10 text-indigo-400 backdrop-blur-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/30 bg-orange-500/10 text-orange-400 backdrop-blur-md">
               <FolderGit2 className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tighter text-gray-100 sm:text-5xl">
               Projects & Research
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-400">
-            A showcase of my recent work, research thesis, and presentations.
+          <p className="max-w-2xl text-lg text-slate-300">
+            A selection of work spanning applied AI systems, data platform design, and research-led product innovation.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {data.map((project, index) => (
+          {data.map((project, index) => {
+            const actionLinks = Array.isArray(project.links) && project.links.length > 0
+              ? project.links
+              : (project.url ? [{ name: 'Open', url: project.url }] : []);
+
+            return (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-xl transition-all hover:border-indigo-400/30 hover:bg-white/[0.03] hover:shadow-2xl hover:shadow-indigo-900/20"
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 backdrop-blur-xl transition-all hover:border-orange-400/40 hover:bg-slate-800/80 hover:shadow-[0_12px_40px_rgba(249,115,22,0.12)]"
             >
               <div className="flex flex-col gap-6 p-8 h-full">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-indigo-400/20 bg-indigo-400/10 text-indigo-400">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400">
                       {getIcon(project.type)}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white leading-tight">
+                      <h3 className="text-xl font-bold text-slate-100 leading-tight">
                         {project.title}
                       </h3>
                       {project.category && (
-                        <p className="text-sm text-indigo-400 mt-1">{project.category}</p>
+                        <p className="mt-1 text-sm text-cyan-300">{project.category}</p>
                       )}
                     </div>
                   </div>
-                  
-                  {(project.url || (project.links && project.links.length > 0)) && (
-                    <a
-                      href={project.url || project.links[0].url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-colors hover:bg-indigo-400/20 hover:text-indigo-400"
-                    >
-                      <ExternalLink className="h-5 w-5" />
-                    </a>
-                  )}
                 </div>
 
                 {project.stack && project.stack.length > 0 && (
@@ -81,7 +76,7 @@ export default function Projects({ data }: { data: any[] }) {
                     {project.stack.map((tech: string, i: number) => (
                       <span
                         key={i}
-                        className="rounded-full border border-indigo-400/20 bg-indigo-400/10 px-3 py-1 text-xs font-medium text-indigo-400"
+                        className="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-400"
                       >
                         {tech}
                       </span>
@@ -93,18 +88,36 @@ export default function Projects({ data }: { data: any[] }) {
                   <ul className="flex flex-col gap-3 mt-4">
                     {project.bullets.map((bullet: string, i: number) => (
                       <li key={i} className="flex items-start gap-3 text-slate-300">
-                        <span className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
-                        <span className="text-sm leading-relaxed">{bullet}</span>
+                        <span className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+                        <span className="text-sm leading-relaxed text-slate-300">{bullet}</span>
                       </li>
                     ))}
                   </ul>
                 )}
+
+                {actionLinks.length > 0 && (
+                  <div className="mt-auto flex flex-wrap gap-3 pt-2">
+                    {actionLinks.map((link: { name?: string; url: string }, linkIndex: number) => (
+                      <a
+                        key={linkIndex}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-800/70 px-4 py-2 text-xs font-semibold tracking-wide text-slate-200 transition-all hover:-translate-y-0.5 hover:border-orange-400/50 hover:bg-slate-700/80 hover:text-orange-200"
+                      >
+                        {link.name || 'Open'}
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Decorative gradient overlay */}
-              <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-indigo-400/10 blur-3xl transition-all group-hover:bg-indigo-400/20" />
+              <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl transition-all group-hover:bg-orange-500/20" />
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

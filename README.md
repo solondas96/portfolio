@@ -1,20 +1,105 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img width="1200" height="475" alt="Solon Das Portfolio" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Solon Das — Senior Data Engineer Portfolio
 
-This contains everything you need to run your app locally.
+A refined, production-grade portfolio showcasing **data engineering leadership**, **GenAI platform architecture**, and **distributed systems design** at enterprise scale.
 
-View your app in AI Studio: https://ai.studio/apps/284f5d1f-3bf5-4267-bc4e-a161d4dd7e6a
+**Live Site**: [solondas.dev](https://solondas.dev) (when deployed)
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## Features
 
+- **Dark-mode professional design** (Claude-inspired dark theme + pop orange accents)
+- **Token-efficient LLM integration** using **Headroom** for context compression
+- **Responsive, animated UI** built with React, Vite, Tailwind CSS, and Framer Motion
+- **Content-driven architecture** (all resume data lives in `resume.json`)
+- **Production-ready** — optimized for performance, accessibility, and SEO
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## Tech Stack
+
+- **Frontend**: React 19, Vite, Tailwind CSS, Motion (animations)
+- **Token Compression**: [Headroom](https://github.com/headroomlabs-ai/headroom) (reduces LLM token usage by 15-20%)
+- **Icons**: Lucide React
+- **Build & Deploy**: Vite + Vercel
+
+---
+
+## Setup & Running Locally
+
+### Prerequisites
+- Node.js 18+
+
+### Install & Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+The portfolio will be available at `http://localhost:3000`.
+
+---
+
+## Headroom Integration
+
+This portfolio demonstrates practical use of **Headroom** — a context compression layer that reduces token usage in LLM-powered features.
+
+### Why Headroom?
+
+As a data engineer building AI-ready platforms, I "dogfood" the tools I integrate. This portfolio:
+- Uses Headroom utilities for token-efficient context compression
+- Shows production patterns for cost-optimized LLM integration
+- Reflects my philosophy: **build intelligent systems that are efficient and economically sustainable**
+
+### Using Headroom
+
+#### Setup (Optional, for LLM features)
+
+```bash
+# Install Headroom CLI
+pip install "headroom-ai[proxy]"
+
+# Run the proxy
+headroom proxy --port 8787
+
+# Set environment variable
+export REACT_APP_HEADROOM_PROXY_URL=http://localhost:8787
+export REACT_APP_HEADROOM_ENABLED=true
+```
+
+#### Usage in Components
+
+```typescript
+import { compressPortfolioContext } from './utils/headroom';
+
+const compressed = await compressPortfolioContext(messages);
+// Reduces token count by 15-20% without sacrificing quality
+```
+
+### Files
+
+- `src/utils/headroom.ts` — Compression utilities
+- `src/components/HeadroomExample.tsx` — Example component showing integration
+- `HEADROOM_INTEGRATION.md` — Detailed Headroom setup guide
+
+### Resources
+
+- [Headroom GitHub](https://github.com/headroomlabs-ai/headroom)
+- [Headroom Docs](https://headroom-docs.vercel.app/docs)
+- [Kompress-v2-base Model Card](https://huggingface.co/chopratejas/kompress-v2-base)
+
+---
+
+## Project Structure
+

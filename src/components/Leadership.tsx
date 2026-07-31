@@ -33,10 +33,11 @@ export default function Leadership({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/5 bg-white/[0.01] p-8 backdrop-blur-xl transition-all hover:border-teal-400/30 hover:bg-white/[0.03] hover:shadow-2xl hover:shadow-teal-900/20"
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-teal-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-teal-900/20"
             >
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-bold text-teal-400">
+                <h3 className="text-2xl font-bold text-teal-300">
                   {item.area}
                 </h3>
                 <p className="text-sm leading-relaxed text-slate-300">

@@ -23,7 +23,7 @@ export default function Testimonials({ data }: { data: any[] }) {
               Testimonials
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-400">
+          <p className="max-w-2xl text-lg text-slate-300">
             What colleagues and leaders have to say about my work and impact.
           </p>
         </motion.div>
@@ -36,21 +36,22 @@ export default function Testimonials({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-              className="group relative flex flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-white/5 bg-white/[0.01] p-8 backdrop-blur-xl transition-all hover:border-fuchsia-400/30 hover:bg-white/[0.03] hover:shadow-2xl hover:shadow-fuchsia-900/20"
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
+              className="group relative flex flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-fuchsia-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-fuchsia-900/20"
             >
               <div className="relative z-10">
                 <MessageSquareQuote className="mb-4 h-8 w-8 text-fuchsia-400/40" />
-                <p className="text-sm leading-relaxed text-slate-300 whitespace-pre-line">
+                <p className="text-sm leading-relaxed text-slate-200 whitespace-pre-line">
                   "{testimonial.text}"
                 </p>
               </div>
               
               <div className="relative z-10 mt-6 flex flex-col gap-1 border-t border-white/10 pt-6">
-                <h4 className="font-bold text-white">{testimonial.name}</h4>
-                <p className="text-xs font-medium text-fuchsia-400 line-clamp-2" title={testimonial.title}>
+                <h4 className="font-bold text-slate-100">{testimonial.name}</h4>
+                <p className="text-xs font-medium text-fuchsia-300 line-clamp-2" title={testimonial.title}>
                   {testimonial.title}
                 </p>
-                <p className="text-xs text-slate-500 mt-1">{testimonial.date}</p>
+                <p className="mt-1 text-xs text-slate-400">{testimonial.date}</p>
               </div>
 
               {/* Decorative gradient overlay */}

@@ -16,15 +16,15 @@ export default function Skills({ data }: { data: any[] }) {
           className="flex flex-col gap-4"
         >
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-400/20 bg-emerald-400/10 text-emerald-400 backdrop-blur-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/30 bg-orange-500/10 text-orange-400 backdrop-blur-md">
               <Code2 className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tighter text-gray-100 sm:text-5xl">
               Technical Arsenal
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-400">
-            The tools, languages, and frameworks I use to build digital products.
+          <p className="max-w-2xl text-lg text-slate-300">
+            The tools, languages, and frameworks I use to build reliable, high-impact data and AI platforms.
           </p>
         </motion.div>
 
@@ -36,9 +36,10 @@ export default function Skills({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/5 bg-white/[0.01] p-8 backdrop-blur-xl transition-all hover:border-emerald-400/30 hover:bg-white/[0.03] hover:shadow-2xl hover:shadow-emerald-900/20"
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
+              className="group relative flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-orange-400/40 hover:bg-slate-800/80 hover:shadow-[0_12px_40px_rgba(249,115,22,0.12)]"
             >
-              <h3 className="text-2xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-slate-100">
                 {skillGroup.group}
               </h3>
               
@@ -46,7 +47,7 @@ export default function Skills({ data }: { data: any[] }) {
                 {skillGroup.items.map((item: string, i: number) => (
                   <span
                     key={i}
-                    className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-400 transition-colors hover:bg-emerald-400/20"
+                    className="rounded-full border border-orange-400/30 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-300 transition-colors hover:bg-orange-500/20"
                   >
                     {item}
                   </span>
@@ -54,7 +55,7 @@ export default function Skills({ data }: { data: any[] }) {
               </div>
 
               {/* Decorative gradient overlay */}
-              <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-emerald-400/10 blur-3xl transition-all group-hover:bg-emerald-400/20" />
+              <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl transition-all group-hover:bg-orange-500/20" />
             </motion.div>
           ))}
         </div>

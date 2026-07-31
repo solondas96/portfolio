@@ -57,21 +57,29 @@ export default function AnimatedBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw soft gradient mesh
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(15, 23, 42, 1)'); // slate-900
-      gradient.addColorStop(1, 'rgba(2, 6, 23, 1)'); // slate-950
+      gradient.addColorStop(0, 'rgba(2, 6, 23, 1)');
+      gradient.addColorStop(0.5, 'rgba(15, 23, 42, 0.95)');
+      gradient.addColorStop(1, 'rgba(2, 6, 23, 1)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Add a subtle glow
       const radialGradient = ctx.createRadialGradient(
-        canvas.width / 2, canvas.height / 2, 0,
-        canvas.width / 2, canvas.height / 2, canvas.width / 1.5
+        canvas.width * 0.2, canvas.height * 0.15, 0,
+        canvas.width * 0.2, canvas.height * 0.15, canvas.width * 0.55
       );
-      radialGradient.addColorStop(0, 'rgba(56, 189, 248, 0.05)'); // sky-400
+      radialGradient.addColorStop(0, 'rgba(56, 189, 248, 0.12)');
       radialGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = radialGradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      const secondaryGlow = ctx.createRadialGradient(
+        canvas.width * 0.85, canvas.height * 0.8, 0,
+        canvas.width * 0.85, canvas.height * 0.8, canvas.width * 0.4
+      );
+      secondaryGlow.addColorStop(0, 'rgba(129, 140, 248, 0.10)');
+      secondaryGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = secondaryGlow;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach(p => {

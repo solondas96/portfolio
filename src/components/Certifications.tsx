@@ -33,10 +33,11 @@ export default function Certifications({ data }: { data: string[] }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-6 backdrop-blur-xl transition-all hover:border-rose-400/30 hover:bg-white/[0.03]"
+              whileHover={{ y: -4, scale: 1.01, transition: { duration: 0.2 } }}
+              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-xl transition-all hover:border-rose-400/40 hover:bg-slate-800/80"
             >
               <div className="flex h-2 w-2 shrink-0 rounded-full bg-rose-400" />
-              <span className="text-lg font-medium text-slate-200">{cert}</span>
+              <span className="text-lg font-medium text-slate-100">{cert}</span>
               
               {/* Decorative gradient overlay */}
               <div className="absolute -right-10 -top-10 h-20 w-20 rounded-full bg-rose-400/10 blur-2xl transition-all group-hover:bg-rose-400/20" />

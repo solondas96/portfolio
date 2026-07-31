@@ -33,16 +33,17 @@ export default function Education({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/5 bg-white/[0.01] p-8 backdrop-blur-xl transition-all hover:border-purple-400/30 hover:bg-white/[0.03] hover:shadow-2xl hover:shadow-purple-900/20"
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-purple-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-purple-900/20"
             >
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-slate-100">
                   {edu.degree}
                 </h3>
-                <p className="text-lg font-medium text-purple-400">
+                <p className="text-lg font-medium text-purple-300">
                   {edu.institution}
                 </p>
-                <p className="text-sm font-mono text-slate-500">
+                <p className="text-sm font-mono text-slate-400">
                   {edu.dates}
                 </p>
               </div>

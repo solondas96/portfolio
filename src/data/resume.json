@@ -1,8 +1,8 @@
 {
   "basics": {
     "name": "Solon Das",
-    "title": "Senior AI Data Engineer | GenAI, RAG & Distributed Data Platforms",
-    "summary": "Senior Data Engineering leader with 7+ years of experience architecting distributed, AI-ready data platforms at enterprise scale. Proven track record of building GenAI systems, real-time streaming pipelines, semantic search architectures, and data quality frameworks that power multi-million dollar business impact. Deep expertise in Spark, Databricks, Palantir Foundry, Azure, Kafka, and large-scale data modeling.",
+    "title": "Senior AI Data Engineer | GenAI, RAG, Agentic Systems & Distributed Data Platforms",
+    "summary": "Senior data engineering leader with 7+ years of experience building scalable, AI-ready platforms that power GenAI, RAG, and agentic systems at enterprise scale. I specialize in turning complex data ecosystems into reliable foundations for intelligent applications—combining distributed systems design, semantic retrieval, and production-grade data quality to deliver measurable business impact. My work spans Spark, Databricks, Palantir Foundry, Azure, Kafka, and modern data modeling for high-value AI products.",
     "location": "Bengaluru, India",
     "email": "solondas96@gmail.com",
     "phone": "7008482584",
@@ -139,7 +139,9 @@
         "NL2SQL",
         "Semantic Search",
         "Vector Embeddings",
-        "Ontology Modeling"
+        "Ontology Modeling",
+        "Context Compression",
+        "Token Optimization"
       ]
     },
     {
@@ -183,6 +185,38 @@
     "title": "Predicting Fraudulent Jobs Research Thesis",
     "category": "Natural Language Processing",
     "url": "https://drive.google.com/file/d/1L_AUwU-8rhUBQazGOdKtWB0eRaaRE8SS/view?usp=share_link",
+    "type": "research"
+  },
+  {
+    "title": "XOXO",
+    "category": "GitHub Repository",
+    "url": "https://solondas96.github.io/tic-tac-toe/",
+    "links": [
+      {
+        "name": "Live",
+        "url": "https://solondas96.github.io/tic-tac-toe/"
+      },
+      {
+        "name": "Repository",
+        "url": "https://github.com/solondas96/tic-tac-toe"
+      }
+    ],
+    "type": "portfolio"
+  },
+  {
+    "title": "TOMD",
+    "category": "GitLab Repository",
+    "url": "https://tomd-793db3.gitlab.io",
+    "links": [
+      {
+        "name": "Live",
+        "url": "https://tomd-793db3.gitlab.io"
+      },
+      {
+        "name": "Repository",
+        "url": "https://gitlab.com/solondas96/tomd"
+      }
+    ],
     "type": "research"
   }
 ],

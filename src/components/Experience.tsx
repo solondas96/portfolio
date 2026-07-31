@@ -16,15 +16,15 @@ export default function Experience({ data }: { data: any[] }) {
           className="flex flex-col gap-4"
         >
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-400 backdrop-blur-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/30 bg-orange-500/10 text-orange-400 backdrop-blur-md">
               <Briefcase className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tighter text-gray-100 sm:text-5xl">
               Experience
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-400">
-            A timeline of my professional journey, highlighting key roles and measurable impact.
+          <p className="max-w-2xl text-lg text-slate-300">
+            A timeline of my professional journey, highlighting the systems, leadership, and business impact behind each chapter.
           </p>
         </motion.div>
 
@@ -36,10 +36,11 @@ export default function Experience({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
               className={`group relative overflow-hidden rounded-3xl border transition-all duration-300 ${
                 expandedIndex === index
-                  ? 'border-sky-400/30 bg-white/[0.03] shadow-2xl shadow-sky-900/20'
-                  : 'border-white/5 bg-white/[0.01] hover:border-white/10 hover:bg-white/[0.02]'
+                  ? 'border-orange-400/40 bg-slate-900/90 shadow-[0_12px_34px_rgba(249,115,22,0.12)]'
+                  : 'border-white/10 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-800/80'
               } backdrop-blur-xl`}
             >
               <button
@@ -48,20 +49,20 @@ export default function Experience({ data }: { data: any[] }) {
               >
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="text-xl font-semibold text-white sm:text-2xl">
+                    <h3 className="text-xl font-semibold text-slate-100 sm:text-2xl">
                       {job.role}
                     </h3>
-                    <span className="rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-400">
+                    <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-400">
                       {job.dates}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-slate-400">
-                    <span className="font-medium text-slate-300">{job.company}</span>
+                    <span className="font-medium text-slate-200">{job.company}</span>
                     <span>•</span>
                     <span>{job.location}</span>
                   </div>
                 </div>
-                <div className={`flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180 bg-white/10' : ''}`}>
+                <div className={`flex h-10 w-10 items-center justify-center rounded-full border border-slate-700/80 bg-slate-800/70 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180 bg-slate-700/80' : ''}`}>
                   <ChevronDown className="h-5 w-5 text-slate-400" />
                 </div>
               </button>
@@ -76,11 +77,11 @@ export default function Experience({ data }: { data: any[] }) {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-8 pt-0 sm:px-8">
-                      <div className="h-[1px] w-full bg-gradient-to-r from-white/10 to-transparent mb-6" />
+                      <div className="mb-6 h-[1px] w-full bg-gradient-to-r from-slate-300/70 to-transparent" />
                       <ul className="flex flex-col gap-4">
                         {job.bullets.map((bullet: string, i: number) => (
                           <li key={i} className="flex items-start gap-4 text-slate-300">
-                            <span className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400" />
+                            <span className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500" />
                             <span className="leading-relaxed">{bullet}</span>
                           </li>
                         ))}

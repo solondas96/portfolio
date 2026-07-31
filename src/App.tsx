@@ -54,14 +54,16 @@ export default function App() {
   }, [availableSections]);
 
   return (
-    <div className="relative min-h-screen bg-slate-950 font-sans text-slate-50 selection:bg-sky-500/30">
+    <div className="relative min-h-screen bg-transparent font-sans text-slate-100 selection:bg-orange-400/30">
       <AnimatePresence>
         {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       </AnimatePresence>
 
-      <AnimatedBackground />
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="animate-float-slow absolute left-[-10%] top-[-5%] h-72 w-72 rounded-full bg-cyan-400/12 blur-3xl" />
+        <div className="animate-float-slow-delayed absolute bottom-0 right-[-10%] h-80 w-80 rounded-full bg-sky-500/12 blur-3xl" />
+      </div>
 
-      {/* Scroll Spy Navigation */}
       <nav className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 lg:flex">
         {availableSections.map((section) => (
           <a
@@ -73,16 +75,16 @@ export default function App() {
             <span
               className={`absolute h-full w-full rounded-full transition-all duration-300 ${
                 activeSection === section.id
-                  ? 'scale-100 bg-sky-400'
-                  : 'scale-50 bg-slate-600 group-hover:scale-75 group-hover:bg-slate-400'
+                  ? 'scale-100 bg-orange-500'
+                  : 'scale-50 bg-gray-500 group-hover:scale-75 group-hover:bg-gray-600'
               }`}
             />
             {activeSection === section.id && (
-              <span className="absolute h-full w-full animate-ping rounded-full bg-sky-400 opacity-50" />
+              <span className="absolute h-full w-full animate-ping rounded-full bg-orange-500 opacity-50" />
             )}
             
             {/* Tooltip */}
-            <span className="absolute right-8 rounded-md bg-slate-800 px-2 py-1 text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="absolute right-8 rounded-md border border-white/10 bg-slate-900/95 px-2 py-1 text-xs font-medium text-slate-100 shadow-lg opacity-0 transition-opacity group-hover:opacity-100">
               {section.label}
             </span>
           </a>
@@ -135,9 +137,9 @@ export default function App() {
         )}
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 bg-slate-950/50 py-12 backdrop-blur-md">
+      <footer className="relative z-10 border-t border-white/10 bg-slate-950/70 py-12 backdrop-blur-md">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-6 sm:flex-row sm:px-12 lg:px-24">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-300">
             © {new Date().getFullYear()} {resumeData.basics.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
@@ -147,7 +149,7 @@ export default function App() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-slate-400 transition-colors hover:text-sky-400"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-orange-400"
               >
                 {link.name}
               </a>
