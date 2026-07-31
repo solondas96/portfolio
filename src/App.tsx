@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import AnimatedBackground from './components/AnimatedBackground';
+import { AnimatePresence } from 'motion/react';
 import SplashScreen from './components/SplashScreen';
+import TopNav from './components/TopNav';
+import TrustStrip from './components/TrustStrip';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
@@ -11,6 +12,7 @@ import Leadership from './components/Leadership';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
+import ClosingCTA from './components/ClosingCTA';
 import resumeData from './data/resume.json';
 
 export default function App() {
@@ -64,37 +66,20 @@ export default function App() {
         <div className="animate-float-slow-delayed absolute bottom-0 right-[-10%] h-80 w-80 rounded-full bg-sky-500/12 blur-3xl" />
       </div>
 
-      <nav className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 lg:flex">
-        {availableSections.map((section) => (
-          <a
-            key={section.id}
-            href={`#${section.id}`}
-            className="group relative flex h-3 w-3 items-center justify-center"
-            aria-label={`Scroll to ${section.label}`}
-          >
-            <span
-              className={`absolute h-full w-full rounded-full transition-all duration-300 ${
-                activeSection === section.id
-                  ? 'scale-100 bg-orange-500'
-                  : 'scale-50 bg-gray-500 group-hover:scale-75 group-hover:bg-gray-600'
-              }`}
-            />
-            {activeSection === section.id && (
-              <span className="absolute h-full w-full animate-ping rounded-full bg-orange-500 opacity-50" />
-            )}
-            
-            {/* Tooltip */}
-            <span className="absolute right-8 rounded-md border border-white/10 bg-slate-900/95 px-2 py-1 text-xs font-medium text-slate-100 shadow-lg opacity-0 transition-opacity group-hover:opacity-100">
-              {section.label}
-            </span>
-          </a>
-        ))}
-      </nav>
+      <TopNav
+        sections={availableSections}
+        activeSection={activeSection}
+        name={resumeData.basics.name}
+        email={resumeData.basics.email}
+      />
 
       <main className="relative z-10">
         <div id="hero">
           <Hero data={resumeData.basics} />
         </div>
+
+        <TrustStrip companies={resumeData.experience?.map((job: any) => job.company) || []} />
+
         {!!resumeData.experience?.length && (
           <div id="experience">
             <Experience data={resumeData.experience} />
@@ -135,6 +120,8 @@ export default function App() {
             <Testimonials data={(resumeData as any).testimonials} />
           </div>
         )}
+
+        <ClosingCTA email={resumeData.basics.email} links={resumeData.basics.links} />
       </main>
 
       <footer className="relative z-10 border-t border-white/10 bg-slate-950/70 py-12 backdrop-blur-md">

@@ -70,7 +70,9 @@ export default function Hero({ data }: { data: any }) {
           </motion.a>
 
           <motion.a
-            href="mailto:solondas96@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=solondas96@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ y: -3, scale: 1.03, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.97 }}
             className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-slate-700/80 bg-slate-800/70 px-6 py-4 text-sm font-semibold text-slate-100 backdrop-blur-md transition-all hover:bg-slate-700/80 hover:scale-105 active:scale-95"
