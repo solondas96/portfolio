@@ -90,6 +90,11 @@
 
   "achievements": [
     {
+      "title": "Platform Cost Reduction",
+      "metric": "51.2%",
+      "context": "Optimized ACDC Spark workloads to reduce monthly platform cost from $26.9K to $13.1K by profiling execution plans, replacing UDFs with native functions, and shifting to incremental loads."
+    },
+    {
       "title": "Revenue Impact",
       "metric": "$1.7M",
       "context": "Net revenue gain through marketing optimization data platform."
