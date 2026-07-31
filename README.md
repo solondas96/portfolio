@@ -1,105 +1,113 @@
 <div align="center">
-<img width="1200" height="475" alt="Solon Das Portfolio" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+	<img width="1200" height="475" alt="Solon Das Portfolio" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Solon Das — Senior Data Engineer Portfolio
+# Solon Das Portfolio
 
-A refined, production-grade portfolio showcasing **data engineering leadership**, **GenAI platform architecture**, and **distributed systems design** at enterprise scale.
+Personal portfolio for Solon Das, focused on data engineering leadership, GenAI systems, and applied AI product work.
 
-**Live Site**: [solondas.dev](https://solondas.dev) (when deployed)
+## Highlights
 
----
-
-## Features
-
-- **Dark-mode professional design** (Claude-inspired dark theme + pop orange accents)
-- **Token-efficient LLM integration** using **Headroom** for context compression
-- **Responsive, animated UI** built with React, Vite, Tailwind CSS, and Framer Motion
-- **Content-driven architecture** (all resume data lives in `resume.json`)
-- **Production-ready** — optimized for performance, accessibility, and SEO
-
----
+- Animated, responsive single-page portfolio built with React and Vite
+- Data-driven content model powered by [src/data/resume.json](src/data/resume.json)
+- Dedicated Projects and Research section with separate Live and Repository actions
+- Optional Headroom integration utilities for token-efficient LLM context compression
 
 ## Tech Stack
 
-- **Frontend**: React 19, Vite, Tailwind CSS, Motion (animations)
-- **Token Compression**: [Headroom](https://github.com/headroomlabs-ai/headroom) (reduces LLM token usage by 15-20%)
-- **Icons**: Lucide React
-- **Build & Deploy**: Vite + Vercel
+- React 19
+- Vite 6
+- Tailwind CSS 4
+- Motion
+- Lucide React
+- Headroom AI (optional integration)
 
----
+## Local Development
 
-## Setup & Running Locally
-
-### Prerequisites
+Prerequisites:
 - Node.js 18+
 
-### Install & Run
+Install dependencies:
 
 ```bash
-# Install dependencies
 npm install
+```
 
-# Start dev server
+Run the dev server:
+
+```bash
 npm run dev
+```
 
-# Build for production
+The app runs on http://localhost:3000.
+
+Build for production:
+
+```bash
 npm run build
 ```
 
-The portfolio will be available at `http://localhost:3000`.
-
----
-
-## Headroom Integration
-
-This portfolio demonstrates practical use of **Headroom** — a context compression layer that reduces token usage in LLM-powered features.
-
-### Why Headroom?
-
-As a data engineer building AI-ready platforms, I "dogfood" the tools I integrate. This portfolio:
-- Uses Headroom utilities for token-efficient context compression
-- Shows production patterns for cost-optimized LLM integration
-- Reflects my philosophy: **build intelligent systems that are efficient and economically sustainable**
-
-### Using Headroom
-
-#### Setup (Optional, for LLM features)
+Preview the production build:
 
 ```bash
-# Install Headroom CLI
-pip install "headroom-ai[proxy]"
-
-# Run the proxy
-headroom proxy --port 8787
-
-# Set environment variable
-export REACT_APP_HEADROOM_PROXY_URL=http://localhost:8787
-export REACT_APP_HEADROOM_ENABLED=true
+npm run preview
 ```
 
-#### Usage in Components
+## Scripts
 
-```typescript
-import { compressPortfolioContext } from './utils/headroom';
-
-const compressed = await compressPortfolioContext(messages);
-// Reduces token count by 15-20% without sacrificing quality
-```
-
-### Files
-
-- `src/utils/headroom.ts` — Compression utilities
-- `src/components/HeadroomExample.tsx` — Example component showing integration
-- `HEADROOM_INTEGRATION.md` — Detailed Headroom setup guide
-
-### Resources
-
-- [Headroom GitHub](https://github.com/headroomlabs-ai/headroom)
-- [Headroom Docs](https://headroom-docs.vercel.app/docs)
-- [Kompress-v2-base Model Card](https://huggingface.co/chopratejas/kompress-v2-base)
-
----
+- `npm run dev`: Start Vite dev server at port 3000
+- `npm run build`: Create production build in [dist](dist)
+- `npm run preview`: Preview production build locally
+- `npm run lint`: TypeScript type-check (`tsc --noEmit`)
+- `npm run clean`: Remove build output
 
 ## Project Structure
+
+```text
+.
+├── src
+│   ├── components
+│   ├── data
+│   │   └── resume.json
+│   ├── utils
+│   │   └── headroom.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── HEADROOM_INTEGRATION.md
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## Content Updates
+
+Most portfolio content can be updated in [src/data/resume.json](src/data/resume.json):
+
+- Basics (name, headline, summary, links)
+- Experience, achievements, skills, education
+- Projects and Research cards
+- Testimonials and certifications
+
+## Headroom Notes
+
+Headroom support is included as an optional integration layer:
+
+- Utility module: [src/utils/headroom.ts](src/utils/headroom.ts)
+- Example component: [src/components/HeadroomExample.tsx](src/components/HeadroomExample.tsx)
+- Setup guide: [HEADROOM_INTEGRATION.md](HEADROOM_INTEGRATION.md)
+
+If you do not need Headroom-backed features right now, you can keep these files as future-ready scaffolding.
+
+## Deployment
+
+This project builds as a static frontend and can be deployed to Vercel, Netlify, GitHub Pages, or any static host.
+
+Build command:
+
+```bash
+npm run build
+```
+
+Publish the generated [dist](dist) directory.
 
