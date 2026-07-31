@@ -13,12 +13,12 @@ export default function Hero({ data }: { data: any }) {
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-24 pb-12 sm:px-12 lg:px-24">
-      <div className="z-10 flex w-full max-w-6xl flex-col items-start gap-8">
+      <div className="z-10 flex w-full max-w-6xl flex-col items-center gap-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col gap-4"
+          className="flex flex-col items-center gap-4"
         >
           <motion.div
             animate={{ y: [0, -3, 0] }}
@@ -57,7 +57,7 @@ export default function Hero({ data }: { data: any }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap gap-4 pt-4"
+          className="flex flex-wrap justify-center gap-4 pt-4"
         >
           <motion.a
             href="#experience"
