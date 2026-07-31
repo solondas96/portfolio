@@ -19,11 +19,11 @@ export default function Experience({ data }: { data: any[] }) {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/30 bg-orange-500/10 text-orange-400 backdrop-blur-md">
               <Briefcase className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-gray-100 sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter text-gray-100 sm:text-4xl lg:text-5xl">
               Experience
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-300">
+          <p className="max-w-2xl text-base text-slate-300 sm:text-lg">
             A timeline of my professional journey, highlighting the systems, leadership, and business impact behind each chapter.
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export default function Experience({ data }: { data: any[] }) {
               className={`group relative overflow-hidden rounded-3xl border transition-all duration-300 ${
                 expandedIndex === index
                   ? 'border-orange-400/40 bg-slate-900/90 shadow-[0_12px_34px_rgba(249,115,22,0.12)]'
-                  : 'border-white/10 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-800/80'
+                  : 'border-white/12 bg-slate-900/70 hover:border-slate-700 hover:bg-slate-800/80'
               } backdrop-blur-xl`}
             >
               <button

@@ -29,11 +29,11 @@ export default function Projects({ data }: { data: any[] }) {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/30 bg-orange-500/10 text-orange-400 backdrop-blur-md">
               <FolderGit2 className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-gray-100 sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter text-gray-100 sm:text-4xl lg:text-5xl">
               Projects & Research
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-300">
+          <p className="max-w-2xl text-base text-slate-300 sm:text-lg">
             A selection of work spanning applied AI systems, data platform design, and research-led product innovation.
           </p>
         </motion.div>
@@ -52,7 +52,7 @@ export default function Projects({ data }: { data: any[] }) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 backdrop-blur-xl transition-all hover:border-orange-400/40 hover:bg-slate-800/80 hover:shadow-[0_12px_40px_rgba(249,115,22,0.12)]"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/12 bg-slate-900/80 backdrop-blur-xl transition-all hover:border-orange-400/40 hover:bg-slate-800/80 hover:shadow-[0_12px_40px_rgba(249,115,22,0.12)]"
             >
               <div className="flex flex-col gap-6 p-8 h-full">
                 <div className="flex items-start justify-between">

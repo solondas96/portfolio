@@ -19,7 +19,7 @@ export default function Education({ data }: { data: any[] }) {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-purple-400/20 bg-purple-400/10 text-purple-400 backdrop-blur-md">
               <GraduationCap className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">
               Education
             </h2>
           </div>
@@ -34,7 +34,7 @@ export default function Education({ data }: { data: any[] }) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-purple-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-purple-900/20"
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/12 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-purple-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-purple-900/20"
             >
               <div className="flex flex-col gap-2">
                 <h3 className="text-xl font-bold text-slate-100">

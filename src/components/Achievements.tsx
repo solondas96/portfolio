@@ -19,11 +19,11 @@ export default function Achievements({ data }: { data: any[] }) {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-500/30 bg-orange-500/10 text-orange-400 backdrop-blur-md">
               <Trophy className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-gray-100 sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter text-gray-100 sm:text-4xl lg:text-5xl">
               Key Achievements
             </h2>
           </div>
-          <p className="max-w-2xl text-lg text-slate-300">
+          <p className="max-w-2xl text-base text-slate-300 sm:text-lg">
             Measurable impact and significant milestones from my career.
           </p>
         </motion.div>
@@ -37,7 +37,7 @@ export default function Achievements({ data }: { data: any[] }) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-orange-400/40 hover:bg-slate-800/80 hover:shadow-[0_12px_40px_rgba(249,115,22,0.12)]"
+              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/12 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-orange-400/40 hover:bg-slate-800/80 hover:shadow-[0_12px_40px_rgba(249,115,22,0.12)]"
             >
               <div className="flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 transition-transform group-hover:scale-110">
@@ -52,7 +52,7 @@ export default function Achievements({ data }: { data: any[] }) {
                 <h3 className="text-5xl font-bold tracking-tighter text-slate-100">
                   {achievement.metric}
                 </h3>
-                <p className="text-lg font-semibold text-cyan-300">
+                <p className="text-base font-semibold text-cyan-300 sm:text-lg">
                   {achievement.title}
                 </p>
                 <p className="text-sm leading-relaxed text-slate-300">

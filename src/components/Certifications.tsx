@@ -19,7 +19,7 @@ export default function Certifications({ data }: { data: string[] }) {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-rose-400/20 bg-rose-400/10 text-rose-400 backdrop-blur-md">
               <Award className="h-6 w-6" />
             </div>
-            <h2 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">
               Certifications
             </h2>
           </div>
@@ -34,10 +34,10 @@ export default function Certifications({ data }: { data: string[] }) {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ y: -4, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-xl transition-all hover:border-rose-400/40 hover:bg-slate-800/80"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/12 bg-slate-900/80 p-6 backdrop-blur-xl transition-all hover:border-rose-400/40 hover:bg-slate-800/80"
             >
               <div className="flex h-2 w-2 shrink-0 rounded-full bg-rose-400" />
-              <span className="text-lg font-medium text-slate-100">{cert}</span>
+              <span className="text-base font-medium text-slate-100 sm:text-lg">{cert}</span>
               
               {/* Decorative gradient overlay */}
               <div className="absolute -right-10 -top-10 h-20 w-20 rounded-full bg-rose-400/10 blur-2xl transition-all group-hover:bg-rose-400/20" />

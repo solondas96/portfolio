@@ -21,12 +21,14 @@
       "dates": "Mar 2025 - Present",
       "location": "Bengaluru",
       "bullets": [
-        "Architected the Unstructured Data Platform for Swiss Re Asset Management, enabling AI-native interaction with enterprise document corpora.",
-        "Designed multimodal ingestion pipelines extracting structured objects (images, charts, tables, text) from high-volume Outlook and UI uploads.",
-        "Built embedding-based semantic retrieval system supporting enterprise-scale deep search across financial documentation.",
-        "Implemented Vision-Language Model powered summarization to operationalize AI insights for business users.",
-        "Defined ontology-driven data modeling strategy within Palantir Foundry to standardize AI interaction across domains.",
-        "Established foundational AI data layer serving downstream GenAI products and executive decision workflows."
+        "AnalytiC Document Corpus (ACDC) - Palantir Foundry: Led and designed cross-functional delivery across core SwissRe business CorSo, L&H, and P&C to consolidate fragmented document ecosystems into a single governed platform (~90M documents / ~59TB), establishing a consistent, compliant access model and reducing reliance on siloed, team-specific pipelines.",
+        "AnalytiC Document Corpus (ACDC) - Palantir Foundry: Defined and drove adoption of standardized document processing (PDF, OCR, text) and centralized enrichment pipelines, enabling reuse of extracted insights across use cases, reducing duplicated compute and engineering effort, and accelerating ML/GenAI experimentation and deployment.",
+        "AnalytiC Document Corpus (ACDC) - Palantir Foundry: Operationalized request based ingestion from core systems, ensuring up-to-date data availability for analytics and decision-making.",
+        "AnalytiC Document Corpus (ACDC) - Palantir Foundry: Optimized ACDC Spark workloads to reduce monthly platform cost by 51.2%, from $26.9K in January to $13.1K by April, with the largest month-on-month reduction of 42.8% achieved in April by profiling Spark execution plans, replacing costly UDFs with Spark native functions and shifting to incremental loads.",
+        "Unstructured Data Model (UDM), Asset Management - Palantir Foundry: Led the architecture and delivery of AM-UDM on Palantir Foundry, a multimodal data product powered by Vision-Language Models (VLMs), forming the foundational AI layer for Generative AI use cases across Asset Management.",
+        "Unstructured Data Model (UDM), Asset Management - Palantir Foundry: Built a scalable multimodal extraction pipeline to parse text, images, charts, and tables from heterogeneous sources (e.g., Outlook emails, user uploads), handling noisy unstructured data at enterprise scale.",
+        "Unstructured Data Model (UDM), Asset Management - Palantir Foundry: Developed a contextual summarization layer using vision models to generate semantically rich summaries from combined visual and textual content, significantly improving downstream LLM performance.",
+        "Unstructured Data Model (UDM), Asset Management - Palantir Foundry: Built semantic search using vector embeddings, enabling deep retrieval across the document corpus and powering a chat-based interface for analysts to uncover insights from unstructured data."
       ]
     },
 
