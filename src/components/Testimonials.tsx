@@ -6,29 +6,25 @@ export default function Testimonials({ data }: { data: any[] }) {
   if (!data || data.length === 0) return null;
 
   return (
-    <section id="testimonials" className="relative flex min-h-[70vh] flex-col items-center justify-center px-6 py-24 sm:px-12 lg:px-24">
-      <div className="z-10 flex w-full max-w-5xl flex-col gap-12">
+    <section id="testimonials" className="portfolio-section px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col gap-4"
+          className="grid gap-5 border-t border-black/20 pt-5 lg:grid-cols-[1fr_2fr]"
         >
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-fuchsia-400/20 bg-fuchsia-400/10 text-fuchsia-400 backdrop-blur-md">
-              <MessageSquareQuote className="h-6 w-6" />
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">
-              Testimonials
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base text-slate-300 sm:text-lg">
+          <p className="section-kicker">Testimonials</p>
+          <div>
+          <h2 className="section-title">Trusted in the work.</h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#4d4c47] sm:text-lg">
             What colleagues and leaders have to say about my work and impact.
           </p>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 border-t border-black/20 md:grid-cols-2">
           {data.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -36,26 +32,22 @@ export default function Testimonials({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-white/12 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-fuchsia-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-fuchsia-900/20"
+              className="group flex min-h-80 flex-col justify-between gap-6 border-b border-black/20 py-7 md:px-7 md:odd:border-r md:first:pl-0"
             >
-              <div className="relative z-10">
-                <MessageSquareQuote className="mb-4 h-8 w-8 text-fuchsia-400/40" />
-                <p className="text-sm leading-relaxed text-slate-200 whitespace-pre-line">
+              <div>
+                <MessageSquareQuote className="mb-5 h-7 w-7 text-[#e34f3c]" />
+                <p className="text-base leading-relaxed text-[#4d4c47] whitespace-pre-line">
                   "{testimonial.text}"
                 </p>
               </div>
               
-              <div className="relative z-10 mt-6 flex flex-col gap-1 border-t border-white/10 pt-6">
-                <h4 className="font-bold text-slate-100">{testimonial.name}</h4>
-                <p className="text-xs font-medium text-fuchsia-300 line-clamp-2" title={testimonial.title}>
+              <div className="mt-6 flex flex-col gap-1 border-t border-black/20 pt-5">
+                <h4 className="font-bold text-[#151514]">{testimonial.name}</h4>
+                <p className="text-xs font-medium text-[#e34f3c] line-clamp-2" title={testimonial.title}>
                   {testimonial.title}
                 </p>
-                <p className="mt-1 text-xs text-slate-400">{testimonial.date}</p>
+                <p className="mt-1 text-xs text-[#6c6b64]">{testimonial.date}</p>
               </div>
-
-              {/* Decorative gradient overlay */}
-              <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-fuchsia-400/10 blur-3xl transition-all group-hover:bg-fuchsia-400/20" />
             </motion.div>
           ))}
         </div>

@@ -1,31 +1,30 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Users } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Leadership({ data }: { data: any[] }) {
   if (!data || data.length === 0) return null;
 
   return (
-    <section id="leadership" className="relative flex min-h-[50vh] flex-col items-center justify-center px-6 py-24 sm:px-12 lg:px-24">
-      <div className="z-10 flex w-full max-w-5xl flex-col gap-12">
+    <section id="leadership" className="portfolio-section px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col gap-4"
+          className="grid gap-5 border-t border-black/20 pt-5 lg:grid-cols-[1fr_2fr]"
         >
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-teal-400/20 bg-teal-400/10 text-teal-400 backdrop-blur-md">
-              <Users className="h-6 w-6" />
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">
-              Leadership & Impact
-            </h2>
+          <p className="section-kicker">Leadership</p>
+          <div>
+            <h2 className="section-title">Direction is part of the deliverable.</h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#4d4c47] sm:text-lg">
+              I build clarity across product, platforms, and the people who operate them.
+            </p>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 border-t border-black/20 md:grid-cols-3">
           {data.map((item, index) => (
             <motion.div
               key={index}
@@ -33,20 +32,20 @@ export default function Leadership({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/12 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-teal-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-teal-900/20"
+              className="group flex min-h-56 flex-col gap-8 border-b border-black/20 py-6 md:px-6 md:border-r md:first:pl-0 md:last:border-r-0"
             >
-              <div className="flex flex-col gap-2">
-                <h3 className="text-2xl font-bold text-teal-300">
+              <div className="flex items-start justify-between gap-5">
+                <span className="section-kicker">0{index + 1}</span>
+                <ArrowUpRight className="h-5 w-5 text-[#e34f3c] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </div>
+              <div className="flex flex-col gap-3">
+                <h3 className="text-2xl font-medium text-[#151514]">
                   {item.area}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-300">
+                <p className="text-sm leading-relaxed text-[#4d4c47]">
                   {item.details}
                 </p>
               </div>
-
-              {/* Decorative gradient overlay */}
-              <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-teal-400/10 blur-3xl transition-all group-hover:bg-teal-400/20" />
             </motion.div>
           ))}
         </div>

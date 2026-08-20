@@ -1,31 +1,29 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { GraduationCap } from 'lucide-react';
 
 export default function Education({ data }: { data: any[] }) {
   if (!data || data.length === 0) return null;
 
   return (
-    <section id="education" className="relative flex min-h-[50vh] flex-col items-center justify-center px-6 py-24 sm:px-12 lg:px-24">
-      <div className="z-10 flex w-full max-w-5xl flex-col gap-12">
+    <section id="education" className="portfolio-section px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col gap-4"
+          className="grid gap-5 border-t border-black/20 pt-5 lg:grid-cols-[1fr_2fr]"
         >
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-purple-400/20 bg-purple-400/10 text-purple-400 backdrop-blur-md">
-              <GraduationCap className="h-6 w-6" />
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl lg:text-5xl">
-              Education
-            </h2>
+          <p className="section-kicker">Education</p>
+          <div>
+            <h2 className="section-title">Foundations that keep evolving.</h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#4d4c47] sm:text-lg">
+              Formal study in data science, shaped by years of hands-on platform engineering.
+            </p>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 border-t border-black/20 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((edu, index) => (
             <motion.div
               key={index}
@@ -33,23 +31,17 @@ export default function Education({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6, scale: 1.01, transition: { duration: 0.2 } }}
-              className="group relative flex flex-col gap-4 overflow-hidden rounded-3xl border border-white/12 bg-slate-900/80 p-8 backdrop-blur-xl transition-all hover:border-purple-400/40 hover:bg-slate-800/80 hover:shadow-2xl hover:shadow-purple-900/20"
+              className="flex min-h-52 flex-col justify-between gap-8 border-b border-black/20 py-6 sm:px-6 sm:odd:border-r sm:first:pl-0 lg:nth-[3n]:border-r-0"
             >
               <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-bold text-slate-100">
+                <p className="section-kicker">{edu.dates}</p>
+                <h3 className="text-xl font-medium text-[#151514]">
                   {edu.degree}
                 </h3>
-                <p className="text-lg font-medium text-purple-300">
+                <p className="text-base font-medium text-[#e34f3c]">
                   {edu.institution}
                 </p>
-                <p className="text-sm font-mono text-slate-400">
-                  {edu.dates}
-                </p>
               </div>
-
-              {/* Decorative gradient overlay */}
-              <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-purple-400/10 blur-3xl transition-all group-hover:bg-purple-400/20" />
             </motion.div>
           ))}
         </div>

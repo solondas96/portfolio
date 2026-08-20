@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowDown, ExternalLink, Mail, Phone, Check } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Mail, Phone, Check } from 'lucide-react';
 
 export default function Hero({ data }: { data: any }) {
   const [copied, setCopied] = useState(false);
@@ -12,32 +12,32 @@ export default function Hero({ data }: { data: any }) {
   };
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-24 pb-12 sm:px-12 lg:px-24">
-      <div className="z-10 flex w-full max-w-6xl flex-col items-center gap-8 text-center">
+    <section className="portfolio-hero relative flex min-h-screen flex-col justify-end px-5 pb-10 pt-28 sm:px-8 lg:px-12">
+      <div className="flex w-full max-w-[1440px] flex-col gap-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col items-center gap-4"
+          className="flex max-w-6xl flex-col gap-5"
         >
           <motion.div
             animate={{ y: [0, -3, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-orange-400/40 bg-orange-500/15 px-4 py-1.5 text-sm font-medium text-orange-300 backdrop-blur-md"
+            className="inline-flex w-fit items-center gap-2 border border-[#e34f3c]/40 px-3 py-1.5 text-sm font-medium text-[#a52f21]"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-500 opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#e34f3c] opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#e34f3c]"></span>
             </span>
             Available for new opportunities
           </motion.div>
           
-          <h1 className="font-[family-name:var(--font-display)] text-4xl font-bold tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
-            <span className="block text-slate-100">{data.name}</span>
-            <span className="mt-2 block bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+          <h1 className="portfolio-hero-title font-[family-name:var(--font-display)] text-[#151514]">
+            <span className="block">{data.name}</span>
+            <span className="block text-[#e34f3c]">
               {data.title.split(' | ')[0] || data.title.split(' & ')[0]}
             </span>
-            <span className="mt-3 block text-lg font-medium tracking-normal text-slate-300 sm:text-xl lg:text-2xl">
+            <span className="mt-4 block max-w-3xl text-lg font-medium leading-snug tracking-normal text-[#4d4c47] sm:text-xl lg:text-2xl">
               {data.title.includes(' | ') ? data.title.split(' | ')[1] : (data.title.includes(' & ') ? `& ${data.title.split(' & ')[1]}` : '')}
             </span>
           </h1>
@@ -47,8 +47,7 @@ export default function Hero({ data }: { data: any }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ y: -4, scale: 1.01, transition: { duration: 0.2 } }}
-          className="max-w-3xl rounded-3xl border border-slate-800/80 bg-slate-900/75 p-6 text-lg font-medium leading-relaxed text-slate-200 shadow-[0_20px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:text-xl"
+          className="max-w-3xl border-t border-black/20 pt-5 text-base leading-relaxed text-[#4d4c47] sm:text-lg"
         >
           {data.summary}
         </motion.p>
@@ -57,41 +56,35 @@ export default function Hero({ data }: { data: any }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap justify-center gap-4 pt-4"
+          className="flex flex-wrap gap-3 pt-2"
         >
           <motion.a
             href="#experience"
-            whileHover={{ y: -3, scale: 1.03, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-orange-600 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-orange-500 hover:scale-105 active:scale-95"
+            className="group inline-flex items-center justify-center gap-2 bg-[#151514] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#e34f3c]"
           >
             <span className="relative z-10">View Experience</span>
-            <ArrowDown className="relative z-10 h-4 w-4 transition-transform group-hover:translate-y-1" />
+            <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
           </motion.a>
 
           <motion.a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=solondas96@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -3, scale: 1.03, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-slate-700/80 bg-slate-800/70 px-6 py-4 text-sm font-semibold text-slate-100 backdrop-blur-md transition-all hover:bg-slate-700/80 hover:scale-105 active:scale-95"
+            className="group inline-flex items-center justify-center gap-2 border border-black/30 px-5 py-3 text-sm font-semibold text-[#151514] transition-colors hover:border-[#e34f3c] hover:text-[#e34f3c]"
           >
-            <span className="relative z-10">Email</span>
-            <Mail className="relative z-10 h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            <span>Email</span>
+            <Mail className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
           </motion.a>
 
           <motion.button
             onClick={handleCopyPhone}
-            whileHover={{ y: -3, scale: 1.03, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.97 }}
-            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-slate-700/80 bg-slate-800/70 px-6 py-4 text-sm font-semibold text-slate-100 backdrop-blur-md transition-all hover:bg-slate-700/80 hover:scale-105 active:scale-95 cursor-pointer"
+            className="group inline-flex cursor-pointer items-center justify-center gap-2 border border-black/30 px-5 py-3 text-sm font-semibold text-[#151514] transition-colors hover:border-[#e34f3c] hover:text-[#e34f3c]"
           >
-            <span className="relative z-10">{copied ? 'Copied!' : '+91-7008482584'}</span>
+            <span>{copied ? 'Copied!' : '+91-7008482584'}</span>
             {copied ? (
-              <Check className="relative z-10 h-4 w-4 text-emerald-400" />
+              <Check className="h-4 w-4 text-emerald-700" />
             ) : (
-              <Phone className="relative z-10 h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+              <Phone className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
             )}
           </motion.button>
 
@@ -101,12 +94,10 @@ export default function Hero({ data }: { data: any }) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -3, scale: 1.03, transition: { duration: 0.2 } }}
-              whileTap={{ scale: 0.97 }}
-              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-slate-700/80 bg-slate-800/70 px-6 py-4 text-sm font-semibold text-slate-100 backdrop-blur-md transition-all hover:bg-slate-700/80 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center justify-center gap-2 border border-black/30 px-5 py-3 text-sm font-semibold text-[#151514] transition-colors hover:border-[#e34f3c] hover:text-[#e34f3c]"
             >
-              <span className="relative z-10">{link.name}</span>
-              <ExternalLink className="relative z-10 h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+              <span>{link.name}</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
             </motion.a>
           ))}
         </motion.div>

@@ -56,15 +56,10 @@ export default function App() {
   }, [availableSections]);
 
   return (
-    <div className="relative min-h-screen bg-transparent font-sans text-slate-100 selection:bg-orange-400/30">
+    <div className="portfolio-shell min-h-screen">
       <AnimatePresence>
         {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       </AnimatePresence>
-
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="animate-float-slow absolute left-[-10%] top-[-5%] h-72 w-72 rounded-full bg-cyan-400/12 blur-3xl" />
-        <div className="animate-float-slow-delayed absolute bottom-0 right-[-10%] h-80 w-80 rounded-full bg-sky-500/12 blur-3xl" />
-      </div>
 
       <TopNav
         sections={availableSections}
@@ -73,7 +68,7 @@ export default function App() {
         email={resumeData.basics.email}
       />
 
-      <main className="relative z-10">
+      <main>
         <div id="hero">
           <Hero data={resumeData.basics} />
         </div>
@@ -124,19 +119,19 @@ export default function App() {
         <ClosingCTA email={resumeData.basics.email} links={resumeData.basics.links} />
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 bg-slate-950/70 py-12 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-6 sm:flex-row sm:px-12 lg:px-24">
-          <p className="text-sm text-slate-300">
+      <footer className="portfolio-footer py-8">
+        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-5 px-5 sm:flex-row sm:px-8 lg:px-12">
+          <p className="text-sm">
             © {new Date().getFullYear()} {resumeData.basics.name}. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-5">
             {resumeData.basics.links.map((link, i) => (
               <a
                 key={i}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-orange-400"
+                className="text-sm font-medium transition-colors"
               >
                 {link.name}
               </a>
