@@ -97,7 +97,17 @@ If you do not need Headroom-backed features right now, you can keep these files 
 
 ## Deployment
 
-This project builds as a static frontend and can be deployed to Vercel, Netlify, GitHub Pages, or any static host.
+### GitHub Pages (Automated via GitHub Actions)
+
+This project includes a ready-to-use GitHub Actions workflow in [.github/workflows/deploy.yml](.github/workflows/deploy.yml) that builds and deploys the site automatically upon pushing to `main`.
+
+To enable GitHub Pages in your repository:
+1. Go to repository **Settings** on GitHub.
+2. Select **Pages** in the left sidebar.
+3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
+4. Push to `main` (or run the workflow manually from the **Actions** tab).
+
+### Manual / Other Static Hosts
 
 Build command:
 

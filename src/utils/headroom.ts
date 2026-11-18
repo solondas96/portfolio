@@ -18,7 +18,7 @@ export async function compressPortfolioContext(messages: any[]): Promise<any[]> 
     // Compress messages to reduce token count
     const compressed = await compress(messages);
     console.log(`[Headroom] Compressed from ${messages.length} messages using Headroom`);
-    return compressed;
+    return compressed.messages || messages;
   } catch (error) {
     console.warn('[Headroom] Compression failed, using original messages:', error);
     return messages;
@@ -42,7 +42,7 @@ export async function compressProjectData(projectBullets: string[]): Promise<str
       }
     ]);
     
-    return compressed[0]?.content || context;
+    return compressed.messages?.[0]?.content || context;
   } catch (error) {
     console.warn('[Headroom] Project compression failed:', error);
     return projectBullets.join('\n');
