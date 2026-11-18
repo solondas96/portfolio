@@ -1,13 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: "DM Sans", sans-serif;
   --font-display: "DM Sans", sans-serif;
 }
 
 :root {
+  --bg-main: #f4f0e8;
+  --bg-grid: rgba(21, 21, 20, 0.035);
+  --bg-section-start: rgba(244, 240, 232, 0.94);
+  --bg-section-end: rgba(244, 240, 232, 0.8);
+  --bg-nav: rgba(244, 240, 232, 0.85);
+  --bg-nav-scrolled: rgba(244, 240, 232, 0.95);
+  --bg-drawer: #f4f0e8;
+  --bg-row-hover: #ede9df;
+  --bg-row-active: #e9e4da;
+  --text-primary: #151514;
+  --text-secondary: #4d4c47;
+  --text-muted: #6c6b64;
+  --border: rgba(21, 21, 20, 0.2);
+  --border-subtle: rgba(21, 21, 20, 0.12);
+  --border-strong: rgba(21, 21, 20, 0.3);
+  --btn-primary-bg: #151514;
+  --btn-primary-text: #ffffff;
+  --badge-border: rgba(227, 79, 60, 0.4);
+  --badge-text: #a52f21;
   color-scheme: light;
+}
+
+html.dark,
+[data-theme="dark"] {
+  --bg-main: #0e0e0d;
+  --bg-grid: rgba(244, 240, 232, 0.045);
+  --bg-section-start: rgba(14, 14, 13, 0.96);
+  --bg-section-end: rgba(14, 14, 13, 0.85);
+  --bg-nav: rgba(14, 14, 13, 0.85);
+  --bg-nav-scrolled: rgba(14, 14, 13, 0.95);
+  --bg-drawer: #141413;
+  --bg-row-hover: #1c1c1a;
+  --bg-row-active: #242422;
+  --text-primary: #f4f0e8;
+  --text-secondary: #b5b2a8;
+  --text-muted: #7c7a72;
+  --border: rgba(244, 240, 232, 0.16);
+  --border-subtle: rgba(244, 240, 232, 0.1);
+  --border-strong: rgba(244, 240, 232, 0.28);
+  --btn-primary-bg: #f4f0e8;
+  --btn-primary-text: #0e0e0d;
+  --badge-border: rgba(227, 79, 60, 0.5);
+  --badge-text: #ff705e;
+  color-scheme: dark;
 }
 
 html {
@@ -17,9 +62,10 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #f4f0e8;
-  color: #151514;
+  background: var(--bg-main);
+  color: var(--text-primary);
   font-family: "DM Sans", sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 * {
@@ -32,16 +78,17 @@ body {
 }
 
 .portfolio-shell {
-  background-color: #f4f0e8;
+  background-color: var(--bg-main);
   background-image:
-    linear-gradient(rgba(21, 21, 20, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21, 21, 20, 0.035) 1px, transparent 1px);
+    linear-gradient(var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
   background-size: 32px 32px;
-  color: #151514;
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .portfolio-section {
-  background: linear-gradient(90deg, rgba(244, 240, 232, 0.94), rgba(244, 240, 232, 0.8));
+  background: linear-gradient(90deg, var(--bg-section-start), var(--bg-section-end));
 }
 
 .portfolio-hero-title {
@@ -52,8 +99,9 @@ body {
 }
 
 .portfolio-footer {
-  border-top: 1px solid rgba(21, 21, 20, 0.2);
-  color: #4d4c47;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: border-color 0.25s ease, color 0.25s ease;
 }
 
 .portfolio-footer a:hover {
@@ -87,6 +135,68 @@ body {
   }
 }
 
+/* Dark mode overrides for utility classes */
+html.dark [class*="text-[#151514]"] {
+  color: var(--text-primary) !important;
+}
+
+html.dark [class*="text-[#4d4c47]"] {
+  color: var(--text-secondary) !important;
+}
+
+html.dark [class*="text-[#6c6b64]"] {
+  color: var(--text-muted) !important;
+}
+
+html.dark [class*="border-black"] {
+  border-color: var(--border) !important;
+}
+
+html.dark .portfolio-nav > div {
+  background-color: var(--bg-nav) !important;
+  border-color: var(--border) !important;
+}
+
+html.dark aside {
+  background-color: var(--bg-drawer) !important;
+  border-color: var(--border) !important;
+}
+
+html.dark [class*="bg-[#151514]"]:not([class*="group-hover"]) {
+  background-color: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+}
+
+html.dark [class*="bg-[#151514]"]:hover,
+html.dark [class*="hover:bg-[#151514]"]:hover {
+  background-color: #e34f3c !important;
+  color: #ffffff !important;
+}
+
+html.dark [class*="bg-[#e9e4da]"] {
+  background-color: var(--bg-row-active) !important;
+}
+
+html.dark [class*="hover:bg-[#ede9df]"]:hover {
+  background-color: var(--bg-row-hover) !important;
+}
+
+html.dark [class*="border-[#e34f3c]/40"] {
+  border-color: var(--badge-border) !important;
+}
+
+html.dark [class*="text-[#a52f21]"] {
+  color: var(--badge-text) !important;
+}
+
+html.dark .text-emerald-700 {
+  color: #34d399 !important;
+}
+
+html.dark .border-black\/50 {
+  border-color: rgba(244, 240, 232, 0.4) !important;
+}
+
 /* Keep unmodified data sections within the same visual language. */
 .portfolio-shell [class*="bg-slate-900"],
 .portfolio-shell [class*="bg-slate-800"],
@@ -97,7 +207,7 @@ body {
 
 .portfolio-shell [class*="border-white"],
 .portfolio-shell [class*="border-slate"] {
-  border-color: rgba(21, 21, 20, 0.2) !important;
+  border-color: var(--border) !important;
 }
 
 .portfolio-shell [class*="rounded-3xl"],
@@ -107,7 +217,7 @@ body {
 
 .portfolio-shell [class*="text-slate-"],
 .portfolio-shell [class*="text-gray-"] {
-  color: #4d4c47 !important;
+  color: var(--text-secondary) !important;
 }
 
 .portfolio-shell [class*="text-cyan-"],

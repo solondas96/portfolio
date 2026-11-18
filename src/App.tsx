@@ -14,8 +14,9 @@ import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
 import ClosingCTA from './components/ClosingCTA';
 import resumeData from './data/resume.json';
+import { ThemeProvider } from './context/ThemeContext';
 
-export default function App() {
+function PortfolioContent() {
   const [showSplash, setShowSplash] = useState(true);
   const [activeSection, setActiveSection] = useState('hero');
 
@@ -140,5 +141,13 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <PortfolioContent />
+    </ThemeProvider>
   );
 }

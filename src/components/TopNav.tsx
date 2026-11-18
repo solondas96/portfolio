@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 type NavSection = { id: string; label: string };
 
@@ -59,6 +60,7 @@ export default function TopNav({
           </a>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=solondas96@gmail.com"
               target="_blank"
@@ -123,6 +125,10 @@ export default function TopNav({
                   </a>
                 ))}
               </nav>
+
+              <div className="mt-6 mb-4">
+                <ThemeToggle showLabel />
+              </div>
 
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=solondas96@gmail.com"
