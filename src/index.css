@@ -246,3 +246,34 @@ html.dark .border-black\/50 {
 .animate-float-slow-delayed {
   animation: floatSlowDelayed 10s ease-in-out infinite;
 }
+
+/* Print Stylesheet for Executive CV Export (⌘P) */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  .portfolio-nav,
+  .portfolio-footer,
+  button,
+  canvas,
+  .fixed,
+  aside {
+    display: none !important;
+  }
+  .portfolio-shell {
+    background: none !important;
+    color: #111111 !important;
+  }
+  .portfolio-section {
+    background: none !important;
+    padding: 1.5rem 0 !important;
+  }
+  a {
+    text-decoration: none !important;
+    color: #111111 !important;
+  }
+  .section-title {
+    font-size: 2rem !important;
+  }
+}
