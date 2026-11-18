@@ -7,7 +7,7 @@ Personal portfolio for Solon Das, focused on data engineering leadership, GenAI 
 - Animated, responsive single-page portfolio built with React and Vite
 - Data-driven content model powered by [src/data/resume.json](src/data/resume.json)
 - Dedicated Projects and Research section with separate Live and Repository actions
-- Optional Headroom integration utilities for token-efficient LLM context compression
+- Built-in Dark Mode and Light Mode with system preference detection
 
 ## Tech Stack
 
@@ -16,7 +16,6 @@ Personal portfolio for Solon Das, focused on data engineering leadership, GenAI 
 - Tailwind CSS 4
 - Motion
 - Lucide React
-- Headroom AI (optional integration)
 
 ## Local Development
 
@@ -63,14 +62,12 @@ npm run preview
 .
 ├── src
 │   ├── components
+│   ├── context
 │   ├── data
 │   │   └── resume.json
-│   ├── utils
-│   │   └── headroom.ts
 │   ├── App.tsx
 │   ├── index.css
 │   └── main.tsx
-├── HEADROOM_INTEGRATION.md
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
@@ -84,16 +81,6 @@ Most portfolio content can be updated in [src/data/resume.json](src/data/resume.
 - Experience, achievements, skills, education
 - Projects and Research cards
 - Testimonials and certifications
-
-## Headroom Notes
-
-Headroom support is included as an optional integration layer:
-
-- Utility module: [src/utils/headroom.ts](src/utils/headroom.ts)
-- Example component: [src/components/HeadroomExample.tsx](src/components/HeadroomExample.tsx)
-- Setup guide: [HEADROOM_INTEGRATION.md](HEADROOM_INTEGRATION.md)
-
-If you do not need Headroom-backed features right now, you can keep these files as future-ready scaffolding.
 
 ## Deployment
 
