@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Check } from 'lucide-react';
+import CompanyLogo from './CompanyLogo';
 
 interface ExperienceProps {
   data: any[];
@@ -84,7 +85,15 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                     </p>
                     <p className="text-sm text-[#6c6b64] dark:text-[#78766e] lg:mt-1">{job.location}</p>
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-5 items-center">
+                        <CompanyLogo company={job.company} className="h-4 max-w-[80px]" />
+                      </div>
+                      <span className="text-xs font-semibold text-[#e34f3c] uppercase tracking-wide">
+                        {job.company}
+                      </span>
+                    </div>
                     <div className="flex items-center gap-2">
                       <h3 className="text-xl font-medium leading-tight text-[#151514] dark:text-[#f4f0e8] sm:text-2xl">
                         {job.role}
@@ -96,7 +105,6 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm font-semibold text-[#e34f3c]">{job.company}</p>
                   </div>
                   <div
                     className={`self-end flex h-9 w-9 items-center justify-center border border-black/25 dark:border-white/25 transition-transform duration-300 ${
