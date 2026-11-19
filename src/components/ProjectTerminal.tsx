@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Terminal as TerminalIcon, Play, Copy, ExternalLink, CornerDownLeft } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { PROJECTS_DATA, ProjectItem } from '../data/projects';
 
 interface ProjectTerminalProps {
@@ -33,11 +33,14 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
     },
   ]);
 
-  const endRef = useRef<HTMLDivElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Scroll ONLY the internal terminal container, never the outer window
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [outputs]);
 
   const executeCommand = (cmdStr: string) => {
@@ -69,15 +72,71 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
             '  cat <id>, view <id> Inspect architecture, bullets, and metadata of a project',
             '  clone <id>         Copy `git clone <repo>` to your system clipboard',
             '  open <id>          Open project URL or GitHub repository in a new tab',
+            '  whoami             Display author role, background, and specialization',
+            '  skills, tech       Summary of primary distributed systems & AI stack',
+            '  contact            View direct communication handles (email, LinkedIn, GitHub)',
+            '  history            List previously executed commands in this session',
             '  clear              Clear terminal history',
             '  exit               Switch back to the Visual Grid view',
           ].join('\n'),
         });
         break;
 
+      case 'whoami':
+        newOutputs.push({
+          type: 'output',
+          text: [
+            'USER: Solon Das',
+            'ROLE: Data & AI Engineering Leader (AVP @ Swiss Re, Ex-AB InBev, EY, Accenture)',
+            'FOCUS: Distributed Systems (Spark, Databricks), Palantir Foundry, Multimodal VLMs & Agentic AI',
+            'LOCATION: Bengaluru, India',
+          ].join('\n'),
+        });
+        break;
+
+      case 'skills':
+      case 'tech':
+      case 'stack':
+        newOutputs.push({
+          type: 'output',
+          text: [
+            'PRIMARY TECHNICAL STACK:',
+            '  • Big Data & Distributed: Apache Spark, PySpark, Databricks, Palantir Foundry, Kafka, Hadoop',
+            '  • Cloud & Architecture:   Azure, AWS, Palantir Apollo, Delta Lake, Snowflake, Iceberg',
+            '  • AI & Machine Learning:  LangChain, LangGraph, Azure OpenAI, NL2SQL, Vector DBs, VLMs',
+            '  • Languages & Frontend:   Python, Scala, SQL, TypeScript, React, Tailwind CSS',
+          ].join('\n'),
+        });
+        break;
+
+      case 'contact':
+        newOutputs.push({
+          type: 'output',
+          text: [
+            'COMMUNICATION HANDLES:',
+            '  Email:    solondas96@gmail.com',
+            '  Phone:    +91-7008482584',
+            '  LinkedIn: https://linkedin.com/in/solondas',
+            '  GitHub:   https://github.com/solondas96',
+            '  Medium:   https://medium.com/@solondas96',
+          ].join('\n'),
+        });
+        break;
+
+      case 'history':
+        newOutputs.push({
+          type: 'output',
+          text: history.length
+            ? history.map((h, i) => `  ${i + 1}  ${h}`).join('\n')
+            : 'No commands in history yet.',
+        });
+        break;
+
       case 'ls':
       case 'list':
       case 'dir':
+      case 'projects':
+      case 'll':
         newOutputs.push({
           type: 'output',
           component: (
@@ -259,6 +318,7 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
 
       case 'exit':
       case 'quit':
+      case 'q':
         onExit();
         return;
 
@@ -274,9 +334,50 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
     setInputVal('');
   };
 
+  const handleTabCompletion = (current: string) => {
+    const trimmed = current.trim();
+    if (!trimmed) return;
+    const parts = trimmed.split(' ');
+
+    if (parts.length === 1) {
+      const availableCommands = [
+        'help',
+        'ls',
+        'list',
+        'play',
+        'cat',
+        'clone',
+        'open',
+        'clear',
+        'exit',
+        'whoami',
+        'skills',
+        'tech',
+        'contact',
+        'history',
+      ];
+      const match = availableCommands.find((c) => c.startsWith(parts[0].toLowerCase()));
+      if (match) {
+        setInputVal(match + ' ');
+      }
+    } else if (
+      parts.length === 2 &&
+      ['play', 'cat', 'clone', 'open', 'run', 'inspect', 'view'].includes(parts[0].toLowerCase())
+    ) {
+      const match = PROJECTS_DATA.find((p) => p.id.toLowerCase().startsWith(parts[1].toLowerCase()));
+      if (match) {
+        setInputVal(`${parts[0]} ${match.id}`);
+      }
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       executeCommand(inputVal);
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      handleTabCompletion(inputVal);
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       if (history.length === 0) return;
@@ -303,6 +404,8 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
     { label: 'play mamba', cmd: 'play mamba' },
     { label: 'clone xoxo', cmd: 'clone xoxo' },
     { label: 'cat copilot', cmd: 'cat copilot' },
+    { label: 'whoami', cmd: 'whoami' },
+    { label: 'skills', cmd: 'skills' },
     { label: 'help', cmd: 'help' },
     { label: 'clear', cmd: 'clear' },
   ];
@@ -338,7 +441,11 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
         {quickActions.map((qa) => (
           <button
             key={qa.label}
-            onClick={() => executeCommand(qa.cmd)}
+            onClick={(e) => {
+              e.preventDefault();
+              executeCommand(qa.cmd);
+              inputRef.current?.focus({ preventScroll: true });
+            }}
             className="rounded border border-white/20 bg-white/5 px-2 py-0.5 text-neutral-300 hover:border-[#e34f3c] hover:bg-[#e34f3c]/20 hover:text-white transition-colors"
           >
             {qa.label}
@@ -346,9 +453,10 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
         ))}
       </div>
 
-      {/* Terminal Output Area */}
+      {/* Terminal Output Area (Internal scrolling only) */}
       <div
-        onClick={() => inputRef.current?.focus()}
+        ref={terminalBodyRef}
+        onClick={() => inputRef.current?.focus({ preventScroll: true })}
         className="flex max-h-[500px] min-h-[350px] flex-col overflow-y-auto p-4 text-xs leading-relaxed"
       >
         {outputs.map((out, i) => (
@@ -373,8 +481,8 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
         ))}
 
         {/* Input prompt line */}
-        <div className="flex items-center gap-2 text-xs">
-          <span className="text-[#3a7065] font-semibold">solon@github:~/projects$</span>
+        <div className="flex items-center gap-2 text-xs pt-1">
+          <span className="text-[#3a7065] font-semibold shrink-0">solon@github:~/projects$</span>
           <input
             ref={inputRef}
             type="text"
@@ -382,12 +490,10 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={handleKeyDown}
             className="flex-1 bg-transparent text-white outline-none caret-[#e34f3c] font-mono"
-            placeholder="Type a command (e.g. 'play xoxo', 'ls', 'help')..."
+            placeholder="Type a command (e.g. 'play xoxo', 'ls', 'whoami', 'help')..."
             autoFocus
           />
         </div>
-
-        <div ref={endRef} />
       </div>
     </div>
   );
