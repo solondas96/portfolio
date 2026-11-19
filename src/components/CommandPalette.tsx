@@ -18,6 +18,8 @@ import {
   Command as CommandIcon,
   Check,
   Code2,
+  Camera,
+  Instagram,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -148,6 +150,14 @@ export default function CommandPalette({ isOpen, onClose, onOpenResume }: Comman
       action: () => navigateTo('writing'),
     },
     {
+      id: 'nav-photography',
+      title: 'Jump to The Frame Theory (Photography)',
+      subtitle: '@frame_theory.ig · Side pursuit & visual stories',
+      category: 'Navigation',
+      icon: Camera,
+      action: () => navigateTo('photography'),
+    },
+    {
       id: 'nav-skills',
       title: 'Jump to Technical Capabilities',
       subtitle: 'Distributed Systems, Spark, Cloud, LLMs & Ontologies',
@@ -203,6 +213,17 @@ export default function CommandPalette({ isOpen, onClose, onOpenResume }: Comman
       icon: ArrowUpRight,
       action: () => {
         window.open('https://medium.com/@solondas96', '_blank');
+        onClose();
+      },
+    },
+    {
+      id: 'link-instagram',
+      title: 'Open The Frame Theory (Photography Instagram)',
+      subtitle: 'instagram.com/frame_theory.ig',
+      category: 'Links',
+      icon: Instagram,
+      action: () => {
+        window.open('https://www.instagram.com/frame_theory.ig?cnvx=ODJlZWVraWNmNnk3', '_blank');
         onClose();
       },
     },

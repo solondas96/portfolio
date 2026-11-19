@@ -10,6 +10,7 @@ import Achievements from './components/Achievements';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Writing from './components/Writing';
+import Photography from './components/Photography';
 import Leadership from './components/Leadership';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
@@ -49,6 +50,7 @@ function PortfolioContent() {
     { id: 'projects', label: 'Projects', show: !!((resumeData as any).projects?.length || (resumeData as any)['Projects & Research']?.length) },
     { id: 'skills', label: 'Capabilities', show: !!resumeData.skills?.length },
     { id: 'writing', label: 'Writing', show: true },
+    { id: 'photography', label: 'Photography', show: true },
     { id: 'testimonials', label: 'Testimonials', show: !!(resumeData as any).testimonials?.length },
     { id: 'education', label: 'Education', show: !!resumeData.education?.length },
     { id: 'certifications', label: 'Certifications', show: !!resumeData.certifications?.length },
@@ -147,6 +149,11 @@ function PortfolioContent() {
         {/* Phase 2: The Datum Theory / Publications */}
         <div id="writing">
           <Writing />
+        </div>
+
+        {/* The Frame Theory / Photography Side Pursuit */}
+        <div id="photography">
+          <Photography />
         </div>
 
         {!!(resumeData as any).testimonials?.length && (

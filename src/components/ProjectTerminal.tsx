@@ -75,6 +75,7 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
             '  whoami             Display author role, background, and specialization',
             '  skills, tech       Summary of primary distributed systems & AI stack',
             '  contact            View direct communication handles (email, LinkedIn, GitHub)',
+            '  photo, instagram   The Frame Theory photography page & visual stories',
             '  history            List previously executed commands in this session',
             '  clear              Clear terminal history',
             '  exit               Switch back to the Visual Grid view',
@@ -117,8 +118,27 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
             '  Email:    solondas96@gmail.com',
             '  Phone:    +91-7008482584',
             '  LinkedIn: https://linkedin.com/in/solondas',
-            '  GitHub:   https://github.com/solondas96',
-            '  Medium:   https://medium.com/@solondas96',
+            '  GitHub:    https://github.com/solondas96',
+            '  Medium:    https://medium.com/@solondas96 (The Datum Theory)',
+            '  Instagram: https://instagram.com/frame_theory.ig (The Frame Theory)',
+          ].join('\n'),
+        });
+        break;
+
+      case 'photo':
+      case 'photography':
+      case 'instagram':
+      case 'frame-theory':
+      case 'hobby':
+        newOutputs.push({
+          type: 'output',
+          text: [
+            'THE FRAME THEORY · Visual Stories & Photography by Solon Das',
+            'Handle:    @frame_theory.ig',
+            'Bio:       "People, places & moments worth remembering · dolce far niente"',
+            'Genres:    Street & Architecture, Travel Horizons, Candid Portraits',
+            'Gear:      35mm & 50mm Prime · Natural Light',
+            'Instagram: https://www.instagram.com/frame_theory.ig',
           ].join('\n'),
         });
         break;
