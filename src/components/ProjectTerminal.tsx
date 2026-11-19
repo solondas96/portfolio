@@ -98,14 +98,17 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
       case 'skills':
       case 'tech':
       case 'stack':
+      case 'capabilities':
         newOutputs.push({
           type: 'output',
           text: [
-            'PRIMARY TECHNICAL STACK:',
-            '  • Big Data & Distributed: Apache Spark, PySpark, Databricks, Palantir Foundry, Kafka, Hadoop',
-            '  • Cloud & Architecture:   Azure, AWS, Palantir Apollo, Delta Lake, Snowflake, Iceberg',
-            '  • AI & Machine Learning:  LangChain, LangGraph, Azure OpenAI, NL2SQL, Vector DBs, VLMs',
-            '  • Languages & Frontend:   Python, Scala, SQL, TypeScript, React, Tailwind CSS',
+            'PRIMARY CAPABILITIES & ARCHITECTURAL STACK:',
+            '  • GenAI & Agentic Systems:    Multi-Agent Systems, LLMs, Multimodal VLMs, NL2SQL, RAG, Vector DBs',
+            '  • Distributed Compute & Spark: Apache Spark, PySpark, Databricks Lakehouse, ACDC Optimization, Kafka',
+            '  • Enterprise AI Platforms:    Palantir Foundry, Ontology Modeling, AM-UDM Architecture, Slate & Workshop',
+            '  • Cloud Infrastructure:       Microsoft Azure, Azure Databricks, Cosmos DB, ADLS Gen2, Delta Lake',
+            '  • Data Governance & Quality:  Data Quality Frameworks, Metadata Catalogs, Schema Design, Observability',
+            '  • Languages & Frameworks:     Python (NumPy, Pandas, Scikit-learn), Advanced SQL, TypeScript, React',
           ].join('\n'),
         });
         break;

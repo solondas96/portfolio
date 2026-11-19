@@ -119,53 +119,91 @@
 
   "skills": [
     {
-      "group": "Distributed Data Systems",
+      "group": "GenAI, Agentic Systems & LLMs",
+      "description": "Multi-agent systems, multimodal vision models, NL2SQL & semantic vector search",
       "items": [
-        "Apache Spark",
-        "PySpark",
-        "Databricks",
-        "Kafka",
-        "Event-Driven Architectures",
-        "Streaming Systems"
+        "Multi-Agent Systems",
+        "Large Language Models (LLMs)",
+        "Multimodal VLMs",
+        "Natural Language to SQL (NL2SQL)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Semantic Vector Search",
+        "Vector Embeddings",
+        "Context Compression",
+        "Token Optimization",
+        "Hallucination Mitigation"
       ]
     },
     {
-      "group": "Cloud & Infrastructure",
+      "group": "Distributed Compute & Spark Engines",
+      "description": "Petabyte-scale execution plan profiling, ACDC cost reduction & real-time streaming",
+      "items": [
+        "Apache Spark",
+        "PySpark",
+        "Databricks Lakehouse",
+        "Spark Plan Profiling",
+        "ACDC Cost Optimization",
+        "Apache Kafka",
+        "Azure Event Hub",
+        "Event-Driven Architectures",
+        "Real-Time Stream Processing",
+        "Incremental ELT Pipelines"
+      ]
+    },
+    {
+      "group": "Palantir Foundry & Semantic Ontologies",
+      "description": "Multi-tenant document consolidation, ontology object layers & analytical tooling",
+      "items": [
+        "Palantir Foundry",
+        "Ontology Modeling",
+        "AM-UDM Architecture",
+        "Workshop & Slate Apps",
+        "Contour & Quiver",
+        "Multi-Tenant Platforms",
+        "Pipeline Builder",
+        "Data Lineage & Transforms"
+      ]
+    },
+    {
+      "group": "Cloud Infrastructure & Lakehouse",
+      "description": "Enterprise cloud ecosystems, high-availability storage & cost governance",
       "items": [
         "Microsoft Azure",
         "Azure Databricks",
         "Azure Cosmos DB",
-        "Azure Event Hub"
+        "ADLS Gen2 Storage",
+        "Delta Lake / Parquet",
+        "Vector Databases",
+        "Fault-Tolerant Replay",
+        "Cloud Cost Governance"
       ]
     },
     {
-      "group": "AI & Data Platforms",
-      "items": [
-        "Palantir Foundry",
-        "LLMs",
-        "Vision-Language Models",
-        "NL2SQL",
-        "Semantic Search",
-        "Vector Embeddings",
-        "Ontology Modeling",
-        "Context Compression",
-        "Token Optimization"
-      ]
-    },
-    {
-      "group": "Data Governance & Modeling",
+      "group": "Data Governance, Quality & Modeling",
+      "description": "Production auditing frameworks, metadata catalogs & dimensional data warehousing",
       "items": [
         "Data Quality Frameworks",
         "Metadata Engineering",
         "Schema Design",
-        "Data Warehousing"
+        "Dimensional Modeling",
+        "Data Warehousing",
+        "Data Observability",
+        "SLA Monitoring",
+        "Compliance & Lineage"
       ]
     },
     {
-      "group": "Programming",
+      "group": "Programming, Frameworks & Tooling",
+      "description": "Production languages, scientific computing, modern web shells & CI/CD automation",
       "items": [
         "Python",
-        "SQL"
+        "Advanced SQL",
+        "Pandas & NumPy",
+        "Scikit-learn",
+        "TypeScript & React",
+        "Git & GitHub Actions",
+        "GitLab CI/CD",
+        "Linux / Shell Scripting"
       ]
     }
   ],
