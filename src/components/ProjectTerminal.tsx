@@ -122,8 +122,9 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
             '  Phone:    +91-7008482584',
             '  LinkedIn: https://linkedin.com/in/solondas',
             '  GitHub:    https://github.com/solondas96',
-            '  Medium:    https://medium.com/@solondas96 (The Datum Theory)',
-            '  Instagram: https://instagram.com/frame_theory.ig (The Frame Theory)',
+            '  Medium:     https://medium.com/@solondas96 (The Datum Theory)',
+            '  Instagram 1: https://instagram.com/frame_theory.ig (The Frame Theory · Color)',
+            '  Instagram 2: https://instagram.com/afterlight.dark (Afterlight · Monochrome)',
           ].join('\n'),
         });
         break;
@@ -132,16 +133,22 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
       case 'photography':
       case 'instagram':
       case 'frame-theory':
+      case 'afterlight':
       case 'hobby':
         newOutputs.push({
           type: 'output',
           text: [
-            'THE FRAME THEORY · Visual Stories & Photography by Solon Das',
-            'Handle:    @frame_theory.ig',
-            'Bio:       "People, places & moments worth remembering · dolce far niente"',
-            'Genres:    Street & Architecture, Travel Horizons, Candid Portraits',
-            'Gear:      35mm & 50mm Prime · Natural Light',
-            'Instagram: https://www.instagram.com/frame_theory.ig',
+            'VISUAL JOURNALS · Photography by Solon Das',
+            '',
+            '1. THE FRAME THEORY (@frame_theory.ig)',
+            '   "People, places & moments worth remembering · dolce far niente"',
+            '   Genres: Street & Architecture, Travel Horizons, Candid Portraits',
+            '   Link:   https://www.instagram.com/frame_theory.ig',
+            '',
+            '2. AFTERLIGHT (@afterlight.dark)',
+            '   "Black . White . Everything Between · Light fades, stories remain"',
+            '   Genres: Monochromes, Hard Shadows, Silhouettes & Negative Space',
+            '   Link:   https://www.instagram.com/afterlight.dark',
           ].join('\n'),
         });
         break;

@@ -219,11 +219,22 @@ export default function CommandPalette({ isOpen, onClose, onOpenResume }: Comman
     {
       id: 'link-instagram',
       title: 'Open The Frame Theory (Photography Instagram)',
-      subtitle: 'instagram.com/frame_theory.ig',
+      subtitle: 'instagram.com/frame_theory.ig · Color & Natural Light',
       category: 'Links',
       icon: Instagram,
       action: () => {
         window.open('https://www.instagram.com/frame_theory.ig?cnvx=ODJlZWVraWNmNnk3', '_blank');
+        onClose();
+      },
+    },
+    {
+      id: 'link-afterlight',
+      title: 'Open Afterlight (Monochrome Photography Instagram)',
+      subtitle: 'instagram.com/afterlight.dark · Black . White . Everything Between',
+      category: 'Links',
+      icon: Instagram,
+      action: () => {
+        window.open('https://www.instagram.com/afterlight.dark?evlk=bThtN3JyaG45a3dm', '_blank');
         onClose();
       },
     },
