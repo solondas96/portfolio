@@ -17,6 +17,7 @@ import {
   MessageSquareQuote,
   Command as CommandIcon,
   Check,
+  Code2,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -113,6 +114,14 @@ export default function CommandPalette({ isOpen, onClose, onOpenResume }: Comman
       category: 'Navigation',
       icon: Layers,
       action: () => navigateTo('case-studies'),
+    },
+    {
+      id: 'nav-projects',
+      title: 'Jump to Selected Work & GitHub',
+      subtitle: 'Playable game engines, live sandboxes, GitHub tools & CLI',
+      category: 'Navigation',
+      icon: Code2,
+      action: () => navigateTo('projects'),
     },
     {
       id: 'nav-experience',
