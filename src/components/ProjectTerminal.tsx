@@ -29,7 +29,7 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
     },
     {
       type: 'output',
-      text: 'Type "ls" to list repositories, or "play xoxo" / "play mamba" to launch in-app sandboxes.',
+      text: 'Type "ls" to list repositories, or "play resume-os" / "play xoxo" to launch in-app sandboxes.',
     },
   ]);
 
@@ -68,7 +68,7 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
           text: [
             'AVAILABLE COMMANDS:',
             '  ls, list           List all public repositories, category, and tech stacks',
-            '  play <id>, run <id> Launch in-app live playable sandbox (e.g. "play xoxo", "play mamba")',
+            '  play <id>, run <id> Launch in-app live playable sandbox (e.g. "play resume-os", "play xoxo")',
             '  cat <id>, view <id> Inspect architecture, bullets, and metadata of a project',
             '  clone <id>         Copy `git clone <repo>` to your system clipboard',
             '  open <id>          Open project URL or GitHub repository in a new tab',
@@ -179,7 +179,7 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
         if (!arg) {
           newOutputs.push({
             type: 'error',
-            text: 'Usage: play <project_id> (Try "play xoxo" or "play mamba")',
+            text: 'Usage: play <project_id> (Try "play resume-os" or "play xoxo")',
           });
           break;
         }
@@ -400,10 +400,11 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
 
   const quickActions = [
     { label: 'ls', cmd: 'ls' },
+    { label: 'play resume-os', cmd: 'play resume-os' },
     { label: 'play xoxo', cmd: 'play xoxo' },
     { label: 'play mamba', cmd: 'play mamba' },
-    { label: 'clone xoxo', cmd: 'clone xoxo' },
-    { label: 'cat copilot', cmd: 'cat copilot' },
+    { label: 'clone resume-os', cmd: 'clone resume-os' },
+    { label: 'cat resume-os', cmd: 'cat resume-os' },
     { label: 'whoami', cmd: 'whoami' },
     { label: 'skills', cmd: 'skills' },
     { label: 'help', cmd: 'help' },
