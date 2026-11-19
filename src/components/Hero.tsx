@@ -69,14 +69,10 @@ export default function Hero({ data, onOpenResume }: { data: any; onOpenResume?:
           <h1 className="portfolio-hero-title font-[family-name:var(--font-display)] text-[#151514] dark:text-[#f4f0e8]">
             <span className="block">{data.name}</span>
             <span className="block text-[#e34f3c]">
-              {data.title.split(' | ')[0] || data.title.split(' & ')[0]}
+              {data.title.includes(' | ') ? data.title.split(' | ')[0] : data.title}
             </span>
             <span className="mt-4 block max-w-3xl text-lg font-medium leading-snug tracking-normal text-[#4d4c47] dark:text-[#b5b2a8] sm:text-xl lg:text-2xl">
-              {data.title.includes(' | ')
-                ? data.title.split(' | ')[1]
-                : data.title.includes(' & ')
-                ? `& ${data.title.split(' & ')[1]}`
-                : ''}
+              {data.title.includes(' | ') ? data.title.split(' | ')[1] : ''}
             </span>
           </h1>
         </motion.div>

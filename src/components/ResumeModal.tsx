@@ -63,7 +63,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                     Solon Das — Curriculum Vitae
                   </h3>
                   <p className="text-xs text-[#6c6b64] dark:text-[#78766e]">
-                    Senior AI Data Engineer · GenAI Platforms · Distributed Systems
+                    Data & AI Engineering · GenAI Platforms · Distributed Systems
                   </p>
                 </div>
               </div>
