@@ -30,14 +30,11 @@ export default function TrustStrip({ companies }: { companies: string[] }) {
               className="flex flex-col justify-between gap-5 border-b border-black/20 dark:border-white/20 py-6 text-left sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0 hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors"
             >
               {/* Actual Official Logo */}
-              <div className="flex h-10 items-center">
+              <div className="flex h-10 items-center" aria-label={company} title={company}>
                 <CompanyLogo company={company} className="h-8 max-w-[140px]" />
               </div>
 
-              <div className="flex flex-col gap-0.5">
-                <span className="text-sm font-semibold tracking-tight text-[#151514] dark:text-[#f4f0e8]">
-                  {company}
-                </span>
+              <div>
                 <span className="text-xs font-mono text-[#6c6b64] dark:text-[#78766e]">
                   {ROLE_SUBTITLES[company] || 'Data Platform Engineering'}
                 </span>

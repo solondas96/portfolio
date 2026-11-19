@@ -85,14 +85,9 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                     </p>
                     <p className="text-sm text-[#6c6b64] dark:text-[#78766e] lg:mt-1">{job.location}</p>
                   </div>
-                  <div className="flex flex-col gap-1.5">
-                    <div className="flex items-center gap-2.5">
-                      <div className="flex h-5 items-center">
-                        <CompanyLogo company={job.company} className="h-4 max-w-[80px]" />
-                      </div>
-                      <span className="text-xs font-semibold text-[#e34f3c] uppercase tracking-wide">
-                        {job.company}
-                      </span>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex h-6 items-center" aria-label={job.company} title={job.company}>
+                      <CompanyLogo company={job.company} className="h-5 sm:h-6 max-w-[120px]" />
                     </div>
                     <div className="flex items-center gap-2">
                       <h3 className="text-xl font-medium leading-tight text-[#151514] dark:text-[#f4f0e8] sm:text-2xl">
