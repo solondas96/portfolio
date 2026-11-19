@@ -196,7 +196,7 @@ export default function ProjectTerminal({ onPlayProject, onExit }: ProjectTermin
         if (!arg) {
           newOutputs.push({
             type: 'error',
-            text: 'Usage: clone <project_id> (e.g. "clone xoxo", "clone mamba", "clone portfolio")',
+            text: 'Usage: clone <project_id> (e.g. "clone xoxo", "clone mamba", "clone resume-os")',
           });
           break;
         }

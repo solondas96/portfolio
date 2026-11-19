@@ -34,32 +34,8 @@ export default function Projects({ data }: { data?: any[] }) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [sandboxProject, setSandboxProject] = useState<ProjectItem | null>(null);
 
-  // Merge PROJECTS_DATA with any extra projects from resumeData if present
-  const allProjects = useMemo(() => {
-    const list: ProjectItem[] = [...PROJECTS_DATA];
-    if (Array.isArray(data)) {
-      data.forEach((ext) => {
-        const titleMatch = list.some(
-          (p) => p.title.toLowerCase() === ext.title?.toLowerCase()
-        );
-        if (!titleMatch && ext.title) {
-          list.push({
-            id: ext.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-            title: ext.title,
-            tagline: ext.category || 'External Project',
-            category: 'Systems & Tools',
-            type: ext.type || 'tool',
-            description: ext.description || ext.category || '',
-            bullets: ext.bullets || [],
-            stack: ext.stack || [],
-            liveUrl: ext.url || ext.links?.[0]?.url,
-            repoUrl: ext.links?.find((l: any) => l.name?.toLowerCase().includes('repo'))?.url,
-          });
-        }
-      });
-    }
-    return list;
-  }, [data]);
+  // Authoritative curated projects list
+  const allProjects = PROJECTS_DATA;
 
   // Filtered list based on category & search query
   const filteredProjects = useMemo(() => {
