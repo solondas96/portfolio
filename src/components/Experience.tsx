@@ -22,9 +22,6 @@ interface CompanyMetadata {
   tags: string[];
   keyStats: string[];
   badge?: string;
-  statBadgeClass: string;
-  tagClass: string;
-  headerAccentClass: string;
 }
 
 const COMPANY_META: Record<string, CompanyMetadata> = {
@@ -32,38 +29,18 @@ const COMPANY_META: Record<string, CompanyMetadata> = {
     tags: ['Palantir Foundry', 'PySpark', 'Multimodal VLMs', 'Ontology Modeling', 'ACDC Optimization'],
     keyStats: ['51.2% Spark Cost Reduction', '~90M Documents Unified', 'AM-UDM Platform Architecture'],
     badge: 'Current Leadership Role',
-    statBadgeClass:
-      'border-teal-500/20 bg-teal-500/5 text-teal-800 dark:border-teal-400/30 dark:bg-teal-950/50 dark:text-teal-300',
-    tagClass:
-      'border-teal-500/20 text-teal-700 dark:border-teal-400/25 dark:text-teal-300',
-    headerAccentClass: 'hover:border-teal-500/50 dark:hover:border-teal-400/50',
   },
   'AB InBev': {
     tags: ['Azure Databricks', 'Insights Copilot', 'NL2SQL', 'Data Quality Framework', 'FMCG Lakehouse'],
     keyStats: ['+$1.7M Sales Uplift', '5+ Global Business Verticals', 'Enterprise-Scale GenAI'],
-    statBadgeClass:
-      'border-amber-500/20 bg-amber-500/5 text-amber-900 dark:border-amber-400/30 dark:bg-amber-950/50 dark:text-amber-300',
-    tagClass:
-      'border-amber-500/20 text-amber-800 dark:border-amber-400/25 dark:text-amber-300',
-    headerAccentClass: 'hover:border-amber-500/50 dark:hover:border-amber-400/50',
   },
   'EY': {
     tags: ['Apache Spark', 'Apache Kafka', 'Azure Event Hub', 'Cosmos DB', 'Data Observability'],
     keyStats: ['Real-Time Event Streaming', 'Fault-Tolerant Replay Pipelines'],
-    statBadgeClass:
-      'border-yellow-600/20 bg-yellow-500/5 text-yellow-900 dark:border-yellow-300/30 dark:bg-yellow-950/50 dark:text-yellow-200',
-    tagClass:
-      'border-yellow-600/20 text-yellow-800 dark:border-yellow-300/25 dark:text-yellow-200',
-    headerAccentClass: 'hover:border-yellow-400/50 dark:hover:border-yellow-300/50',
   },
   'Accenture': {
     tags: ['PySpark', 'Python', 'ETL Pipelines', 'Pharmaceutical Data', 'Process Automation'],
     keyStats: ['98% Scheduling Reduction', 'Automated Release Tooling'],
-    statBadgeClass:
-      'border-purple-500/20 bg-purple-500/5 text-purple-900 dark:border-purple-400/30 dark:bg-purple-950/50 dark:text-purple-300',
-    tagClass:
-      'border-purple-500/20 text-purple-800 dark:border-purple-400/25 dark:text-purple-300',
-    headerAccentClass: 'hover:border-purple-500/50 dark:hover:border-purple-400/50',
   },
 };
 
@@ -84,7 +61,7 @@ function formatBulletWithHighlights(text: string, selectedSkill?: string | null)
       return (
         <span
           key={i}
-          className="rounded bg-[#e34f3c]/20 dark:bg-[#e34f3c]/30 px-1 py-0.5 font-bold text-[#e34f3c] dark:text-[#ff705e] underline decoration-[#e34f3c]"
+          className="rounded bg-[#e34f3c]/15 dark:bg-[#e34f3c]/25 px-1 py-0.5 font-semibold text-[#e34f3c] dark:text-[#ff705e] underline decoration-[#e34f3c]/40 underline-offset-2"
         >
           {part}
         </span>
@@ -95,7 +72,7 @@ function formatBulletWithHighlights(text: string, selectedSkill?: string | null)
       return (
         <span
           key={i}
-          className="font-bold text-[#151514] dark:text-white bg-black/[0.04] dark:bg-white/[0.08] px-1 py-0.5 rounded text-[#e34f3c] dark:text-[#ff705e]"
+          className="font-semibold text-[#151514] dark:text-[#f4f0e8]"
         >
           {part}
         </span>
@@ -212,9 +189,6 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
             const meta = COMPANY_META[job.company] || {
               tags: ['Data Engineering', 'Distributed Systems'],
               keyStats: [],
-              statBadgeClass: 'border-black/10 bg-black/5 dark:border-white/20 dark:bg-white/10 dark:text-white',
-              tagClass: 'border-black/10 text-[#6c6b64] dark:border-white/15 dark:text-[#d4d1c8]',
-              headerAccentClass: '',
             };
             const isCurrent = job.dates.toLowerCase().includes('present');
 
@@ -238,10 +212,10 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                   <div
                     className={`relative flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-300 ${
                       isCurrent
-                        ? 'border-[#e34f3c] bg-white dark:bg-[#1a1a18] shadow-lg shadow-[#e34f3c]/25 text-[#e34f3c] dark:text-[#ff705e]'
+                        ? 'border-[#e34f3c] bg-white dark:bg-[#1a1a18] shadow-md shadow-[#e34f3c]/20 text-[#e34f3c] dark:text-[#ff705e]'
                         : isExpanded
-                        ? 'border-black/60 dark:border-white/60 bg-white dark:bg-[#20201d] text-[#151514] dark:text-white'
-                        : 'border-black/20 dark:border-white/20 bg-[#f4f0e8] dark:bg-[#161614] text-[#6c6b64] dark:text-[#a8a69e]'
+                        ? 'border-black/40 dark:border-white/40 bg-white dark:bg-[#1e1e1c] text-[#151514] dark:text-[#f4f0e8]'
+                        : 'border-black/15 dark:border-white/15 bg-[#f4f0e8] dark:bg-[#141413] text-[#6c6b64] dark:text-[#a8a69e]'
                     }`}
                   >
                     <span className="font-mono text-xs font-bold">0{index + 1}</span>
@@ -258,9 +232,9 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                 <div
                   className={`group relative flex-1 rounded-2xl border transition-all duration-300 overflow-hidden w-full ${
                     isExpanded
-                      ? 'border-black/30 dark:border-white/25 bg-white dark:bg-[#181816] shadow-xl dark:shadow-[0_12px_40px_rgba(0,0,0,0.7)]'
+                      ? 'border-black/25 dark:border-white/20 bg-white dark:bg-[#161615] shadow-lg dark:shadow-[0_12px_36px_rgba(0,0,0,0.6)]'
                       : 'border-black/15 dark:border-white/12 bg-white/70 dark:bg-[#141413] hover:border-black/30 dark:hover:border-white/25 hover:bg-white dark:hover:bg-[#181816]'
-                  } ${meta.headerAccentClass} ${hasSkillMatch ? 'ring-2 ring-[#e34f3c]' : ''}`}
+                  } ${hasSkillMatch ? 'ring-2 ring-[#e34f3c]' : ''}`}
                 >
                   {/* Card Header (Clickable Accordion Trigger) */}
                   <div
@@ -276,8 +250,8 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                         </div>
 
                         {meta.badge && (
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-teal-500/10 dark:bg-teal-950/60 border border-teal-500/30 dark:border-teal-400/40 px-3 py-1 font-mono text-xs font-semibold text-teal-800 dark:text-teal-300">
-                            <span className="h-2 w-2 rounded-full bg-teal-600 dark:bg-teal-400 animate-pulse" />
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#e34f3c]/10 dark:bg-[#e34f3c]/15 border border-[#e34f3c]/25 dark:border-[#ff705e]/30 px-3 py-1 font-mono text-xs font-semibold text-[#e34f3c] dark:text-[#ff705e]">
+                            <span className="h-2 w-2 rounded-full bg-[#e34f3c] dark:bg-[#ff705e] animate-pulse" />
                             {meta.badge}
                           </span>
                         )}
@@ -323,13 +297,13 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                       </div>
                     </div>
 
-                    {/* Key Stat Badges Row with Vivid Themed Contrast */}
+                    {/* Key Stat Badges Row - Clean Restrained Contrast */}
                     {meta.keyStats && meta.keyStats.length > 0 && (
                       <div className="flex flex-wrap items-center gap-2 pt-1">
                         {meta.keyStats.map((stat, i) => (
                           <span
                             key={i}
-                            className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1 font-mono text-xs font-semibold shadow-xs ${meta.statBadgeClass}`}
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] px-3 py-1 font-mono text-xs font-medium text-[#151514] dark:text-[#f4f0e8]"
                           >
                             <TrendingUp className="h-3.5 w-3.5 shrink-0 text-[#e34f3c] dark:text-[#ff705e]" />
                             <span>{stat}</span>
@@ -338,7 +312,7 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                       </div>
                     )}
 
-                    {/* Tech Stack Pills */}
+                    {/* Tech Stack Pills - Restrained Monochromatic Aesthetic */}
                     {meta.tags && meta.tags.length > 0 && (
                       <div className="flex flex-wrap items-center gap-1.5 pt-1">
                         {meta.tags.map((tag) => {
@@ -347,10 +321,10 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                           return (
                             <span
                               key={tag}
-                              className={`rounded-md px-2.5 py-0.5 font-mono text-xs transition-colors ${
+                              className={`rounded-md px-2.5 py-0.5 font-mono text-xs transition-colors border ${
                                 isTagMatch
-                                  ? 'bg-[#e34f3c] text-white font-bold shadow-xs'
-                                  : `border bg-black/[0.02] dark:bg-white/[0.04] ${meta.tagClass}`
+                                  ? 'bg-[#e34f3c] text-white border-[#e34f3c] font-semibold'
+                                  : 'border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] text-[#6c6b64] dark:text-[#a8a69e] hover:border-black/25 dark:hover:border-white/20 hover:text-[#151514] dark:hover:text-[#f4f0e8]'
                               }`}
                             >
                               {tag}
@@ -369,14 +343,14 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden border-t border-black/10 dark:border-white/10 bg-[#f9f8f5] dark:bg-[#0f0f0e]"
+                        className="overflow-hidden border-t border-black/10 dark:border-white/10 bg-[#faf8f5] dark:bg-[#111110]"
                       >
                         <div className="p-5 sm:p-7 flex flex-col gap-4">
                           <div className="flex items-center justify-between pb-1">
                             <span className="font-mono text-xs uppercase tracking-wider text-[#e34f3c] dark:text-[#ff705e] font-bold">
                               Key Deliverables & Architectural Scope ({job.bullets.length})
                             </span>
-                            <span className="font-mono text-xs text-[#6c6b64] dark:text-[#d4d1c8]">
+                            <span className="font-mono text-xs text-[#6c6b64] dark:text-[#a8a69e]">
                               Engineering Contributions
                             </span>
                           </div>
@@ -392,11 +366,11 @@ export default function Experience({ data, selectedSkill }: ExperienceProps) {
                                   key={i}
                                   className={`relative flex items-start gap-4 rounded-xl border p-4 sm:p-5 text-sm sm:text-[15px] leading-relaxed transition-all ${
                                     isBulletMatch
-                                      ? 'border-[#e34f3c] bg-[#e34f3c]/10 dark:bg-[#e34f3c]/20 shadow-sm text-[#151514] dark:text-white'
-                                      : 'border-black/10 dark:border-white/10 bg-white dark:bg-[#1a1a18] text-[#2c2b28] dark:text-[#f4f0e8] hover:border-black/25 dark:hover:border-white/25 hover:shadow-xs'
+                                      ? 'border-[#e34f3c] bg-[#e34f3c]/10 dark:bg-[#e34f3c]/15 text-[#151514] dark:text-white'
+                                      : 'border-black/10 dark:border-white/10 bg-white dark:bg-[#181816] text-[#2c2b28] dark:text-[#f4f0e8] hover:border-black/25 dark:hover:border-white/20'
                                   }`}
                                 >
-                                  <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#e34f3c]/15 text-[#e34f3c] dark:bg-[#ff705e]/20 dark:text-[#ff705e]">
+                                  <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#e34f3c]/10 text-[#e34f3c] dark:bg-[#ff705e]/20 dark:text-[#ff705e]">
                                     <CheckCircle2 className="h-3.5 w-3.5" />
                                   </div>
 
