@@ -1,104 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import {
-  Camera,
   Instagram,
   ArrowUpRight,
-  Aperture,
-  Compass,
   Eye,
+  Heart,
+  Play,
   Film,
-  Sparkles,
   MapPin,
+  Sparkles,
 } from 'lucide-react';
-
-interface PhotoFrame {
-  id: string;
-  title: string;
-  location: string;
-  category: string;
-  imageUrl: string;
-  exif: {
-    shutter: string;
-    aperture: string;
-    iso: string;
-    focalLength: string;
-  };
-  palette: string;
-}
-
-const PHOTO_FRAMES: PhotoFrame[] = [
-  {
-    id: 'frame-1',
-    title: 'Urban Geometry & High Shadows',
-    location: 'Metropolitan Lines',
-    category: 'Architecture & Form',
-    imageUrl:
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
-    exif: {
-      shutter: '1/500s',
-      aperture: 'ƒ/4.0',
-      iso: '100',
-      focalLength: '35mm',
-    },
-    palette: 'Monochrome & Hard Light',
-  },
-  {
-    id: 'frame-2',
-    title: 'Dolce Far Niente',
-    location: 'Coastal Horizons',
-    category: 'Travel & Solitude',
-    imageUrl:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80',
-    exif: {
-      shutter: '1/250s',
-      aperture: 'ƒ/2.8',
-      iso: '200',
-      focalLength: '50mm',
-    },
-    palette: 'Mediterranean Ochre',
-  },
-  {
-    id: 'frame-3',
-    title: 'Neon & Ambient Dusk',
-    location: 'City Streetscape',
-    category: 'Night & Atmosphere',
-    imageUrl:
-      'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=900&q=80',
-    exif: {
-      shutter: '1/60s',
-      aperture: 'ƒ/1.8',
-      iso: '800',
-      focalLength: '35mm',
-    },
-    palette: 'Cinematic Blue & Vermilion',
-  },
-  {
-    id: 'frame-4',
-    title: 'The Wandering Eye',
-    location: 'Mountain Passes',
-    category: 'People & Transit',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80',
-    exif: {
-      shutter: '1/320s',
-      aperture: 'ƒ/2.0',
-      iso: '160',
-      focalLength: '28mm',
-    },
-    palette: 'Warm Earth & Natural Grain',
-  },
-];
-
-const GENRES = [
-  { label: 'Street & Architecture', icon: Compass },
-  { label: 'Travel & Landscapes', icon: MapPin },
-  { label: 'Cinematic Film Tones', icon: Film },
-  { label: 'Candid Human Moments', icon: Eye },
-];
+import { MOST_VIEWED_POSTS, InstagramPost } from '../data/photography';
 
 export default function Photography() {
-  const [activeFrame, setActiveFrame] = useState<string | null>(null);
   const instagramUrl =
     'https://www.instagram.com/frame_theory.ig?cnvx=ODJlZWVraWNmNnk3';
 
@@ -117,7 +31,7 @@ export default function Photography() {
           className="grid gap-6 border-t border-black/20 dark:border-white/20 pt-5 lg:grid-cols-[1fr_2fr]"
         >
           <div className="flex flex-col gap-2">
-            <p className="section-kicker">Side Pursuit · Photography</p>
+            <p className="section-kicker">Side Pursuit · Visual Stories</p>
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs font-semibold text-[#e34f3c] dark:text-[#ff705e]">
                 The Frame Theory
@@ -131,7 +45,7 @@ export default function Photography() {
           <div className="flex flex-col gap-5">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <h2 className="section-title text-[#151514] dark:text-[#f4f0e8]">
-                People, places & moments worth remembering.
+                Most viewed frames & visual stories.
               </h2>
 
               <a
@@ -147,127 +61,119 @@ export default function Photography() {
             </div>
 
             <p className="max-w-2xl text-base leading-relaxed text-[#4d4c47] dark:text-[#b5b2a8] sm:text-lg">
-              Beyond enterprise data platforms and distributed algorithms, I explore
-              visual storytelling through the lens under{' '}
+              Top-performing visual stories, viral reels, and street frames from{' '}
               <strong className="font-semibold text-[#151514] dark:text-white">
                 The Frame Theory
               </strong>
-              . A photographic journal of natural light, hard architectural geometry, and
-              candid wanderings — driven by the Italian philosophy of{' '}
+              . Exploring cinematic film tones, architectural geometry, and human moments
+              around the world — guided by{' '}
               <em className="font-serif italic text-[#151514] dark:text-white">
                 dolce far niente
-              </em>{' '}
-              (the sweetness of doing nothing).
+              </em>
+              .
             </p>
           </div>
         </motion.div>
 
-        {/* Focus Genres Strip */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-y border-black/15 dark:border-white/15 py-4">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            {GENRES.map((genre) => {
-              const Icon = genre.icon;
-              return (
-                <div
-                  key={genre.label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-black/10 dark:border-white/12 bg-black/[0.02] dark:bg-white/[0.03] px-3.5 py-1 text-xs font-mono text-[#4d4c47] dark:text-[#d4d1c8]"
-                >
-                  <Icon className="h-3.5 w-3.5 text-[#e34f3c] dark:text-[#ff705e]" />
-                  <span>{genre.label}</span>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="flex items-center gap-2 font-mono text-xs text-[#6c6b64] dark:text-[#a8a69e]">
-            <Camera className="h-3.5 w-3.5 text-[#e34f3c] dark:text-[#ff705e]" />
-            <span>35mm & 50mm Prime · Natural Light</span>
-          </div>
-        </div>
-
-        {/* Visual Frame Cards Grid */}
+        {/* Most Viewed Posts Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PHOTO_FRAMES.map((frame, index) => (
+          {MOST_VIEWED_POSTS.map((post, index) => (
             <motion.div
-              key={frame.id}
+              key={post.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              onMouseEnter={() => setActiveFrame(frame.id)}
-              onMouseLeave={() => setActiveFrame(null)}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/15 dark:border-white/12 bg-white dark:bg-[#151514] transition-all duration-300 hover:border-black/30 dark:hover:border-white/25 hover:shadow-xl"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/15 dark:border-white/12 bg-white dark:bg-[#161615] transition-all duration-300 hover:border-black/30 dark:hover:border-white/25 hover:shadow-xl"
             >
-              {/* Photo Area with Camera Viewfinder HUD */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/5 dark:bg-black/40">
+              {/* Media Card Preview */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/10 dark:bg-black/40">
                 <img
-                  src={frame.imageUrl}
-                  alt={frame.title}
+                  src={post.imageUrl}
+                  alt={post.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* Subtle vignette gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30 opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
+                {/* Vignette Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
 
-                {/* Top Corner Viewfinder Reticle */}
-                <div className="pointer-events-none absolute inset-3 flex flex-col justify-between transition-opacity duration-300 opacity-60 group-hover:opacity-100">
-                  <div className="flex items-center justify-between text-[10px] font-mono text-white/80">
-                    <span className="flex items-center gap-1 bg-black/40 px-1.5 py-0.5 rounded backdrop-blur-xs">
-                      <Aperture className="h-2.5 w-2.5 text-[#ff705e]" />
-                      {frame.exif.focalLength}
+                {/* Top Badges Bar: View Count & Reel Indicator */}
+                <div className="absolute inset-x-3 top-3 flex items-center justify-between text-xs font-mono">
+                  {/* Views Badge */}
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-black/70 border border-white/20 px-2.5 py-1 text-white font-semibold shadow-sm backdrop-blur-md text-[11px]">
+                    <Eye className="h-3 w-3 text-[#ff705e]" />
+                    <span>{post.views}</span>
+                  </span>
+
+                  {/* Reel / Photo Pill */}
+                  <span className="inline-flex items-center gap-1 rounded-full bg-white/20 border border-white/30 px-2 py-0.5 text-[10px] text-white font-semibold uppercase tracking-wider backdrop-blur-md">
+                    {post.type === 'reel' ? (
+                      <>
+                        <Play className="h-2.5 w-2.5 fill-white" />
+                        <span>Reel</span>
+                      </>
+                    ) : (
+                      <span>Photo</span>
+                    )}
+                  </span>
+                </div>
+
+                {/* Hover Play Button Overlay (for Reels) */}
+                {post.type === 'reel' && (
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a
+                      href={post.postUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-[#151514] shadow-xl hover:scale-110 hover:bg-white transition-transform"
+                      title="Watch Reel on Instagram"
+                    >
+                      <Play className="h-6 w-6 fill-current ml-0.5" />
+                    </a>
+                  </div>
+                )}
+
+                {/* Bottom Overlay: Location & Engagement */}
+                <div className="absolute inset-x-3 bottom-3 flex items-center justify-between font-mono text-[11px] text-white/90">
+                  {post.location && (
+                    <span className="flex items-center gap-1 bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs border border-white/10">
+                      <MapPin className="h-3 w-3 text-[#ff705e]" />
+                      <span>{post.location}</span>
                     </span>
-                    <span className="bg-black/40 px-1.5 py-0.5 rounded backdrop-blur-xs">
-                      [ REC ]
+                  )}
+                  {post.likes && (
+                    <span className="flex items-center gap-1 bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs border border-white/10">
+                      <Heart className="h-3 w-3 text-[#ff705e] fill-[#ff705e]" />
+                      <span>{post.likes}</span>
                     </span>
-                  </div>
-
-                  {/* Center Focus Reticle on hover */}
-                  <div className="flex items-center justify-center">
-                    <div className="flex h-10 w-10 items-center justify-center rounded border border-white/40 text-white/60 transition-transform duration-300 group-hover:scale-110 group-hover:border-white/80">
-                      <span className="text-xs">+</span>
-                    </div>
-                  </div>
-
-                  {/* Bottom EXIF Readout */}
-                  <div className="flex items-center justify-between font-mono text-[10px] text-white/90 bg-black/60 px-2 py-1 rounded backdrop-blur-xs border border-white/10">
-                    <span>{frame.exif.shutter}</span>
-                    <span>{frame.exif.aperture}</span>
-                    <span>ISO {frame.exif.iso}</span>
-                  </div>
+                  )}
                 </div>
               </div>
 
-              {/* Caption & Metadata */}
+              {/* Card Footer / Caption */}
               <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
                 <div className="flex flex-col gap-1.5">
-                  <div className="flex items-center justify-between text-xs font-mono text-[#6c6b64] dark:text-[#a8a69e]">
-                    <span className="uppercase tracking-wider text-[#e34f3c] dark:text-[#ff705e] font-semibold text-[11px]">
-                      {frame.category}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <MapPin className="h-3 w-3" />
-                      {frame.location}
-                    </span>
-                  </div>
-
                   <h3 className="text-base font-bold text-[#151514] dark:text-[#f4f0e8] leading-snug group-hover:text-[#e34f3c] dark:group-hover:text-[#ff705e] transition-colors">
-                    {frame.title}
+                    {post.title}
                   </h3>
+                  <p className="text-xs text-[#6c6b64] dark:text-[#a8a69e] line-clamp-2 leading-relaxed">
+                    {post.caption}
+                  </p>
                 </div>
 
                 <div className="mt-4 flex items-center justify-between border-t border-black/10 dark:border-white/10 pt-3 text-xs font-mono">
-                  <span className="text-[#6c6b64] dark:text-[#a8a69e] text-[11px]">
-                    {frame.palette}
+                  <span className="font-semibold text-[#e34f3c] dark:text-[#ff705e]">
+                    {post.views}
                   </span>
+
                   <a
-                    href={instagramUrl}
+                    href={post.postUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[#e34f3c] dark:text-[#ff705e] hover:underline"
-                    title="View on Instagram"
+                    className="inline-flex items-center gap-1 text-[#151514] dark:text-[#f4f0e8] hover:text-[#e34f3c] dark:hover:text-[#ff705e] transition-colors font-medium"
                   >
-                    <span>View</span>
+                    <span>{post.type === 'reel' ? 'Watch Reel' : 'View Post'}</span>
                     <ArrowUpRight className="h-3 w-3" />
                   </a>
                 </div>
@@ -276,7 +182,7 @@ export default function Photography() {
           ))}
         </div>
 
-        {/* Editorial Quote & Follow Invitation Banner */}
+        {/* Editorial Invitation Banner */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
